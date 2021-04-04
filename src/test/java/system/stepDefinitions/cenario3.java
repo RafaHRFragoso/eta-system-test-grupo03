@@ -7,8 +7,8 @@ import io.cucumber.java.en.When;
 
 public class cenario3 {
 
-    @Given("o usuário acessou o site")
-    public void oUsuárioAcessouOSite() {
+    @Given("o user acessou o site")
+    public void oUserAcessouOSite() {
 
     }
 

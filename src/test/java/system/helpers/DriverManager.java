@@ -20,6 +20,7 @@ public class DriverManager {
             System.setProperty("webdriver.chrome.silentOutput", "True");
             //Logger.getLogger("org.openqa.selenium").setLevel(Level.OFF);
             driver = new ChromeDriver();
+            driver.get("https://shop.samsung.com/br/");
             driver.manage().window().maximize();
         }
 
