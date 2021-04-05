@@ -29,7 +29,16 @@ public class SamsungHomePage {
     //private By showMoreSpecificationBtn = By.cssSelector("div[title='Mostrar mais ESPECIFICAÇÕES']");
     private By showMoreSpecificationBtn = By.cssSelector("#inpage_container > div:nth-child(4) > div > div:nth-child(2) > div > div > div[title='Mostrar mais ESPECIFICAÇÕES']");
     private String specificationsName = "div.inpage_block.flix-specs.flix-hidden2";
-;
+    private By serviceCenterBtn = By.cssSelector("a[data-omni='footer:suporte_centro de serviços']");
+    private By mobileMenuBtn = By.id("tab10001");
+    private By searchItem = By.id("searchItem");
+    private By kmBtn20Km = By.cssSelector("a[data-emit-name='Km:20']");
+    //private By groupServiceCenter = By.cssSelector("div[class='map-result-w']");
+    //private String groupServiceCenter = driver.findElement(By.cssSelector("div[class='map-result-w']"));
+    private String groupServiceCenter = "div[class='map-result-w']";
+
+
+
     //Construtor
     public SamsungHomePage(){
         this.driver = DriverManager.getDriver();
@@ -57,6 +66,24 @@ public class SamsungHomePage {
 
     public void clickMoreSpecificationBtn(){
         driver.findElement(showMoreSpecificationBtn).click();
+    }
+
+    public void clickServiceCenterBtn(){
+        driver.findElement(serviceCenterBtn).click();
+    }
+
+    public void clickMobileMenuBtn(){
+        driver.findElement(mobileMenuBtn).click();
+    }
+
+    public void clickKmBtn20Km(){
+        driver.findElement(kmBtn20Km).click();
+        waitImplicity();
+    }
+
+    public void sendTextSearchItem(){
+        driver.findElement(searchItem).sendKeys("51010-000");
+        waitImplicity();
     }
 
     //Função para scroll a tela até o rodapé
@@ -100,7 +127,13 @@ public class SamsungHomePage {
         js.executeScript("window.scrollBy(0,-1000)");
     }
 
-    //Função de uma lista de elemento
+    public void scrollUntilElement(){
+        JavascriptExecutor js1 = (JavascriptExecutor) driver;
+        js1.executeScript("window.scrollBy(0,900)");
+        waitImplicity();
+    }
+
+    //Função de uma lista de elemento e imprimir o conteúdo
     public void listElements(){
         List<WebElement> elements = driver.findElements(
                 By.cssSelector(listCompleteNane));
@@ -117,9 +150,14 @@ public class SamsungHomePage {
 
     }
 
-    //Função para pegar o texto do elemento
-    public String getText(WebElement element){
-        return element.getText();
+
+    public void listElements2(){
+        List<WebElement> elements = driver.findElements(
+                By.cssSelector(groupServiceCenter));
+
+        elements.stream().map(WebElement::getText).forEach(System.out::println);
+        waitImplicity();
+
     }
 
     //Função de uma espera implicita
@@ -127,7 +165,7 @@ public class SamsungHomePage {
         driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
     }
     public void waitImplicitySpecial(){
-        driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
     //Função de uma espera explicita

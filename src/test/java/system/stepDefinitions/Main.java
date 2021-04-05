@@ -15,12 +15,14 @@ public class Main {
     private WebDriver driver;
     private WebDriverWait wait;
     private SamsungHomePage samsungHomePage;
-    private DriverManager driverManager = new DriverManager();
+    //private DriverManager driverManager = new DriverManager();
+    //private DriverManager driverManager;
 
     @Test
     @Disabled
     void cenario1() {
-        driverManager.getDriver();
+        //driverManager.getDriver();
+        DriverManager.getDriver();
         samsungHomePage = new SamsungHomePage();
         samsungHomePage.waitImplicity();
         samsungHomePage.clickPopUp();
@@ -32,10 +34,13 @@ public class Main {
         samsungHomePage.waitImplicity();
         samsungHomePage.listElements();
         DriverManager.endSession();
+
     }
     @Test
+    @Disabled
     void cenario2() {
-        driverManager.getDriver();
+       // driverManager.getDriver();
+        DriverManager.getDriver();
         samsungHomePage = new SamsungHomePage();
         samsungHomePage.waitImplicity();
         samsungHomePage.closeCookies();
@@ -53,7 +58,28 @@ public class Main {
         samsungHomePage.clickMoreSpecificationBtn();
         samsungHomePage.waitImplicity();
         samsungHomePage.listElements1();
-        //DriverManager.endSession();*/
+        DriverManager.endSession();
     }
+    @Test
+    public void cenario3(){
+        //driverManager.getDriver();
+        DriverManager.getDriver();
+        samsungHomePage = new SamsungHomePage();
+        samsungHomePage.waitImplicity();
+        samsungHomePage.clickPopUp();
+        samsungHomePage.scrollScreenUntilFooter();
+        samsungHomePage.closeCookies();
+        samsungHomePage.waitImplicity();
+        samsungHomePage.clickServiceCenterBtn();
+        samsungHomePage.waitImplicity();
+        samsungHomePage.scrollUntilElement();
+        samsungHomePage.clickMobileMenuBtn();
+        samsungHomePage.waitImplicity();
+        samsungHomePage.sendTextSearchItem();
+        samsungHomePage.clickKmBtn20Km();
+        samsungHomePage.listElements2();
+        DriverManager.endSession();
 
+
+    }
 }
