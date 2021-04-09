@@ -80,6 +80,61 @@ public class Main {
         samsungHomePage.listElements2();
         DriverManager.endSession();
 
+    }
 
+    @Test
+    public void cenario4() throws InterruptedException {
+        DriverManager.getDriver();
+        samsungHomePage = new SamsungHomePage();
+        samsungHomePage.waitImplicity();
+        samsungHomePage.clickPopUp();
+        samsungHomePage.clickSearchItemBtn();
+        samsungHomePage.sendTextSearchField();
+        samsungHomePage.waitExplicityShowFirstItem();
+        samsungHomePage.closeCookies();
+        samsungHomePage.clickItemGeladeira();
+        samsungHomePage.waitExplicityCar();
+        samsungHomePage.clickVoltage110Btn();
+        samsungHomePage.clickAddCarBtn();
+        samsungHomePage.waitMyCarTextPage();
+        samsungHomePage.validatedMsgMyCarText();
+        DriverManager.endSession();
+
+    }
+
+    @Test
+    @Disabled
+    public void cenario5() throws InterruptedException {
+        DriverManager.getDriver();
+        samsungHomePage = new SamsungHomePage();
+        samsungHomePage.waitImplicity();
+        samsungHomePage.closeCookies();
+        samsungHomePage.clickPopUp();
+        samsungHomePage.clickSearchItemBtn();
+        samsungHomePage.sendTextSearchField();
+        samsungHomePage.waitExplicityShowFirstItem();
+        samsungHomePage.closeCookies();
+        samsungHomePage.clickItemGeladeira();
+        samsungHomePage.waitExplicityCar();
+        samsungHomePage.clickVoltage110Btn();
+        samsungHomePage.clickAddCarBtn();
+        samsungHomePage.waitMyCarTextPage();
+        samsungHomePage.clickRemoveItemCarBtn();
+        samsungHomePage.waitEmptyCarMessage();
+        samsungHomePage.validatedValueEmptyMyCar();
+        DriverManager.endSession();
+
+    }
+    @Test
+    public void cenario6(){
+        DriverManager.getDriver();
+        samsungHomePage = new SamsungHomePage();
+        samsungHomePage.waitImplicity();
+        samsungHomePage.clickPopUp();
+        samsungHomePage.closeCookies();
+        samsungHomePage.mouseHoverCarIconHomePage();
+        samsungHomePage.waitEmptyCarMessageHomePage();
+        samsungHomePage.validatedValueEmptyMyCarHomePage();
+        DriverManager.endSession();
     }
 }
