@@ -137,4 +137,35 @@ public class Main {
         samsungHomePage.validatedValueEmptyMyCarHomePage();
         DriverManager.endSession();
     }
+    @Test
+    public void cenario7(){
+        DriverManager.getDriver();
+        samsungHomePage = new SamsungHomePage();
+        samsungHomePage.waitImplicity();
+        samsungHomePage.clickPopUp();
+        samsungHomePage.closeCookies();
+        samsungHomePage.clickItauCardBtn();
+        samsungHomePage.waitPecaOSeuBtn();
+        samsungHomePage.waitImplicity();
+        samsungHomePage.validatedCartaoSamsungItaucardText();
+        DriverManager.endSession();
+    }
+    @Test
+    public void cenario8(){
+        DriverManager.getDriver();
+        samsungHomePage = new SamsungHomePage();
+        samsungHomePage.waitImplicity();
+        samsungHomePage.clickPopUp();
+        samsungHomePage.closeCookies();
+        samsungHomePage.mouseHover();
+        samsungHomePage.clickTelefoniaTitle();
+        samsungHomePage.closeCookies();
+        samsungHomePage.waitOrdenarPorRelevanciaBtn();
+        samsungHomePage.clickMaisVendidoOrdemBtn();
+        samsungHomePage.waitOrdenarPorMaisVendidoText();
+        samsungHomePage.validatedOrdenarPorMaisVendidoText();
+        DriverManager.endSession();
+
+    }
+
 }
