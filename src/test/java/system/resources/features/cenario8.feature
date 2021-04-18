@@ -7,7 +7,7 @@ Feature: Produto mais vendidos de telefonia
   para que eu possa ver a lista dos produtos mais vendidos
 
   Scenario: Ordernar produto de telefonia por mais vendidos
-    Given o usuário esta no site
+    Given o usuário acessa o site
     When o usuário passa o mouse sobre o menu "Telefonia" e depois clica em "Telefonia"
     And o ver os itens ordenados por relevância e clica no botão "ORDENAR POR RELEVÂNCIA"
     And o usuário clica no botão "Mais vendidos"

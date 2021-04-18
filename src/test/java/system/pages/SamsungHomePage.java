@@ -35,7 +35,8 @@ public class SamsungHomePage {
     //Novos elementos para pesquisar e adicionar um produto no carrinho
     private By searchBtn = By.cssSelector("div[class='acupula-samsung-store-0-x-gnb__sub'] > ul:nth-child(3) > li:nth-child(3) > a > svg");
     private By serachTextField = By.id("downshift-0-input");
-    private By fisrtItemGeladeira = By.cssSelector(".vtex-search-result-3-x-resultGallery > div:nth-child(3) > div:first-child");
+    //private By fisrtItemGeladeira = By.cssSelector(".vtex-search-result-3-x-resultGallery > div:nth-child(3) > div:first-child");
+    private By fisrtItemGeladeira = By.cssSelector (".vtex-search-result-3-x-resultGallery > div:nth-child(3) > div:first-child > section > a > article > button");
     //private By galaxyBudsProBtn = By.cssSelector("img[alt='Galaxy Buds Pro']");
     private By galaxyBudsProColor = By.cssSelector(".pr0.items-stretch.vtex-flex-layout-0-x-stretchChildrenWidth.flex > div > div:nth-child(3) > div > div > div > div > div:nth-child(2) > div:first-child");
     private By voltage110Btn = By.cssSelector(".vtex-store-components-3-x-skuSelectorNameContainer.ma1 > div:nth-child(2) > div[class='vtex-store-components-3-x-skuSelectorItem vtex-store-components-3-x-skuSelectorItem--110-v relative di pointer flex items-center outline-0 ma2'] > div:first-child");
@@ -65,6 +66,19 @@ public class SamsungHomePage {
     private By ordenarPorRelevanciaBtn = By.cssSelector(".vtex-search-result-3-x-orderBy > div > button > span > span");
     private By maisVendidoOrdemBtn = By.cssSelector(".vtex-search-result-3-x-orderBy > div > div > button:nth-child(2)");
     private By ordenarPorMaisVendidoText = By.xpath("//span[text()='Mais Vendidos']");
+
+    //Promoção
+    private By promocaoBtn = By.cssSelector("div.acupula-samsung-store-0-x-footer-column__item:nth-child(2) > div:nth-child(1) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(1) > a:nth-child(1)");
+    private By promocaoValidate = By.cssSelector(".text-block-container__headline");
+
+    //private By voltarBtnCarrinho = By.cssSelector("body > div[class='container'] > div > div:nth-child(2)");
+    private By voltarBtnCarrinho = By.cssSelector(".container >div > div[class='checkout-header-back'] a > svg");
+    private By removeBtn = By.id("remove-button-1896");
+    private By checkOut= By.id("proceed-to-checkout");
+    private By menssageGeladeira = By.cssSelector(".vtex-flex-layout-0-x-flexRow.vtex-flex-layout-0-x-flexRow--listRow > section > div > div:nth-child(2) > div > div > div > div > div:first-child > div > div:nth-child(2)");
+
+
+
 //span[text()="Mais Vendidos"]
     //private By ordenarPorMaisVendidoText = By.cssSelector(".vtex-search-result-3-x-orderBy > div > button");
     //private By ordenarPorMaisVendidoText = By.cssSelector(".vtex-search-result-3-x-orderBy > div > button > span > span");
@@ -115,6 +129,10 @@ public class SamsungHomePage {
     public void clickTelefoniaTitle(){
         driver.findElement(telefoniaTitle).click();
     }
+
+    public void clickVoltarBtnCarrinho(){driver.findElement(voltarBtnCarrinho).click();}
+
+    public void clickRemoveBtn(){driver.findElement(removeBtn).click();}
 
     //Função do hover do mouse
     public void mouseHover(){
@@ -310,6 +328,12 @@ public class SamsungHomePage {
 
     }
 
+    public void waitGeladeiraExcluirDoCarrinho(){
+        wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(menssageGeladeira));
+
+    }
+
     public void validatedMsgMyCarText(){
         String myCarMsg = driver.findElement(myCarText).getText();
         Assertions.assertEquals("Meu carrinho", myCarMsg);
@@ -335,6 +359,22 @@ public class SamsungHomePage {
 
     public void clickThirdItem(){
         driver.findElement(thirdItem).click();
+    }
+
+    public void clickPromocao(){driver.findElement(promocaoBtn).click();}
+
+    public void validatePagePromocoes(){
+        String pagePromocoes = driver.findElement(promocaoValidate).getText();
+        Assertions.assertEquals("Ofertas e Promoções", pagePromocoes);
+        System.out.println("Passou!");
+    }
+
+    public void validadeMenssageGeladeira(){
+        String mensagemGeladeiraCarrinho = driver.findElement(menssageGeladeira).getText();
+        Assertions.assertEquals(
+                "Geladeira Frost Free Samsung French Door Twin Cooling Plus™ 470L Inox Look"
+                , mensagemGeladeiraCarrinho);
+        System.out.println("Passou!");
     }
 
     public void closeCookies(){

@@ -88,6 +88,7 @@ public class Main {
         samsungHomePage = new SamsungHomePage();
         samsungHomePage.waitImplicity();
         samsungHomePage.clickPopUp();
+        samsungHomePage.closeCookies();
         samsungHomePage.clickSearchItemBtn();
         samsungHomePage.sendTextSearchField();
         samsungHomePage.waitExplicityShowFirstItem();
@@ -167,5 +168,48 @@ public class Main {
         DriverManager.endSession();
 
     }
+
+    @Test
+    public void cenario9() throws InterruptedException {
+        DriverManager.getDriver();
+        samsungHomePage = new SamsungHomePage();
+        samsungHomePage.waitImplicity();
+        samsungHomePage.clickPopUp();
+        samsungHomePage.closeCookies();
+        samsungHomePage.clickSearchItemBtn();
+        samsungHomePage.sendTextSearchField();
+        samsungHomePage.waitExplicityShowFirstItem();
+        samsungHomePage.closeCookies();
+        samsungHomePage.clickItemGeladeira();
+        samsungHomePage.waitExplicityCar();
+        samsungHomePage.clickVoltage110Btn();
+        samsungHomePage.clickAddCarBtn();
+        samsungHomePage.waitMyCarTextPage();
+        samsungHomePage.validatedMsgMyCarText();
+        samsungHomePage.clickVoltarBtnCarrinho();
+        samsungHomePage.mouseHoverCarIconHomePage();
+        samsungHomePage.waitGeladeiraExcluirDoCarrinho();
+        samsungHomePage.validadeMenssageGeladeira();
+        samsungHomePage.clickRemoveBtn();
+        samsungHomePage.validatedValueEmptyMyCarHomePage();
+        DriverManager.endSession();
+
+    }
+
+    @Test
+    public void cenario10() throws InterruptedException {
+        DriverManager.getDriver();
+        samsungHomePage = new SamsungHomePage();
+        samsungHomePage.waitImplicity();
+        samsungHomePage.clickPopUp();
+        samsungHomePage.closeCookies();
+        samsungHomePage.scrollScreenUntilFooter();
+        samsungHomePage.clickPromocao();
+        samsungHomePage.validatePagePromocoes();
+        DriverManager.endSession();
+
+    }
+
+
 
 }

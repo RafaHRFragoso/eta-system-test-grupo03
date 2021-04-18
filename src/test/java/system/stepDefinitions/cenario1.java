@@ -12,7 +12,7 @@ public class cenario1 {
     SamsungHomePage samsungHomePage = new SamsungHomePage();
     DriverManager driverManager = new DriverManager();
 
-    @Given("o usuário acessou o site")
+    @Given("o usuário acessou no site")
     public void oUsuárioAcessouOSite() {
         driverManager.getDriver();
     }

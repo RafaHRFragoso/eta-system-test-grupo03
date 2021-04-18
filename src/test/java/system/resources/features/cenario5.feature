@@ -7,7 +7,7 @@ Feature: Remove item carrinho
   Para que eu possa ver a mensagem mostrada
 
   Scenario: Remover item do carrinho
-    Given o usuário esta no site
+    Given o usuário acessa o site
     When o usuário clica o botão de "Pesquisar"
     And o usuário digita o produto "Geladeira" e tecla enter
     And o usuário clica geladeira desejada
