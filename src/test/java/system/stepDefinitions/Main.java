@@ -26,10 +26,12 @@ public class Main {
         samsungHomePage = new SamsungHomePage();
         samsungHomePage.waitImplicity();
         samsungHomePage.clickPopUp();
+        samsungHomePage.closeCookies();
         samsungHomePage.mouseHover();
         samsungHomePage.waitExplicitySmartWatchesMenuBtn();
         samsungHomePage.clickBotaoSmartWatches();
         samsungHomePage.waitImplicity();
+        samsungHomePage.closeCookies();
         samsungHomePage.scrollScreenUntilFooter();
         samsungHomePage.waitImplicity();
         samsungHomePage.listElements();

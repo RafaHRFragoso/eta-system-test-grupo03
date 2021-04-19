@@ -19,24 +19,28 @@ public class SamsungHomePage {
     private JavascriptExecutor js;
 
     private By popBtnNaoObrigado = By.xpath("//button[contains(text(),'NÃO, OBRIGADO.')]");
-    private String cookiesCloseBtnBanner = "#banner-cookie > div > button[class='acupula-samsung-store-0-x-closeBtnBanner']";
-    private String telefoniaMenuBtn = "div[class='acupula-samsung-store-0-x-gnb__depth1-container'] > div > ul > li > a[data-omni='TELEFONIA']";
-    private By smartWatchesMenuBtn = By.cssSelector("a > span[data-omni='telefonia:smartwatches']");
-    private String listCompleteNane = "h3.acupula-samsung-store-0-x-productBrand.acupula-samsung-store-0-x-nameComplete";
+    private By cookiesCloseBtnBanner = By.id("banner-cookie");
+    private String telefoniaMenuBtn = ".samsungbr-samsung-store-0-x-gnb__depth1 > li:first-child > a > span[class='samsungbr-samsung-store-0-x-gnb__depth1-link-text']";
+    //private String telefoniaMenuBtn = "div[class='acupula-samsung-store-0-x-gnb__depth1-container'] > div > ul > li > a[data-omni='TELEFONIA']";
+    private By smartWatchesMenuBtn = By.xpath("//span[text()='Smartwatches']");
+    private String listCompleteNane = "h3.samsungbr-samsung-store-0-x-productBrand.samsungbr-samsung-store-0-x-nameComplete";
+    //private String listCompleteNane = "h3.acupula-samsung-store-0-x-productBrand.acupula-samsung-store-0-x-nameComplete";
     private By thirdItem = By.cssSelector("div[class='vtex-search-result-3-x-gallery flex flex-row flex-wrap items-stretch bn ph1 na4 pl9-l'] > div:nth-child(3)");
     private By showMoreSpecificationBtn = By.cssSelector("#inpage_container > div:nth-child(4) > div > div:nth-child(2) > div > div > div[title='Mostrar mais ESPECIFICAÇÕES']");
     private String specificationsName = "div.inpage_block.flix-specs.flix-hidden2";
-    private By serviceCenterBtn = By.cssSelector("a[data-omni='footer:suporte_centro de serviços']");
+    //private By serviceCenterBtn = By.cssSelector("a[data-omni='footer:suporte_centro de serviços']");
+    private By serviceCenterBtn = By.xpath("//a[text()='Centro de Serviços']");
     private By mobileMenuBtn = By.id("tab10001");
     private By searchItem = By.id("searchItem");
     private By kmBtn20Km = By.cssSelector("a[data-emit-name='Km:20']");
-    private String groupServiceCenter = "div[class='map-result-w']";
+    private String groupServiceCenter = "div[class='map-result-w'] > ul > li[class='result-list__item']";
 
     //Novos elementos para pesquisar e adicionar um produto no carrinho
-    private By searchBtn = By.cssSelector("div[class='acupula-samsung-store-0-x-gnb__sub'] > ul:nth-child(3) > li:nth-child(3) > a > svg");
+    private By searchBtn = By.cssSelector("li.undefined .samsungbr-samsung-store-0-x-gnb__search-btn > svg[id='search-bold']");
     private By serachTextField = By.id("downshift-0-input");
     //private By fisrtItemGeladeira = By.cssSelector(".vtex-search-result-3-x-resultGallery > div:nth-child(3) > div:first-child");
-    private By fisrtItemGeladeira = By.cssSelector (".vtex-search-result-3-x-resultGallery > div:nth-child(3) > div:first-child > section > a > article > button");
+    //private By fisrtItemGeladeira = By.cssSelector (".vtex-search-result-3-x-resultGallery > div:nth-child(3) > div:first-child > section > a > article > button");
+    private By fisrtItemGeladeira = By.cssSelector("div[class='pr0 items-stretch vtex-flex-layout-0-x-stretchChildrenWidth   flex'] > div:nth-child(2) > div:first-child");
     //private By galaxyBudsProBtn = By.cssSelector("img[alt='Galaxy Buds Pro']");
     private By galaxyBudsProColor = By.cssSelector(".pr0.items-stretch.vtex-flex-layout-0-x-stretchChildrenWidth.flex > div > div:nth-child(3) > div > div > div > div > div:nth-child(2) > div:first-child");
     private By voltage110Btn = By.cssSelector(".vtex-store-components-3-x-skuSelectorNameContainer.ma1 > div:nth-child(2) > div[class='vtex-store-components-3-x-skuSelectorItem vtex-store-components-3-x-skuSelectorItem--110-v relative di pointer flex items-center outline-0 ma2'] > div:first-child");
@@ -52,11 +56,11 @@ public class SamsungHomePage {
     private By emptyCarMessage = By.cssSelector(".cart-template.full-cart.span12.active > div > div > h2");
 
     //Novos elementos carrinho na tela home page
-    private String carIconHomePage = ".acupula-samsung-store-0-x-gnb__utility > li:nth-child(2) > aside > div > div > button";
+    private String carIconHomePage = "div[class='samsungbr-samsung-store-0-x-gnb__sub'] > ul:nth-child(3) > li:nth-child(2) > aside > div > div > button";
     private By emptyCarMessageHomePage = By.cssSelector(".lh-copy.vtex-rich-text-0-x-paragraph.vtex-rich-text-0-x-paragraph--ptbr");
 
     //Itaú card botão
-    private By itauCardBtn = By.cssSelector(".acupula-samsung-store-0-x-gnb__sub > div > div");
+    private By itauCardBtn = By.cssSelector("div[class='samsungbr-samsung-store-0-x-gnb__sub'] > div > div");
     private By pecaOSeuBtn = By.cssSelector("div[data-testid='base-modal'] > div > div > a:nth-child(2)");
     //private By pecaOSeuBtn = By.cssSelector(".vtex-rich-text-0-x-wrapper.vtex-rich-text-0-x-wrapper--button-samsungItau > p > a");
     private By cartaoSamsungItaucardText = By.cssSelector(".floating-navigation__headline  > strong[class='floating-navigation__headline-text'] > em");
@@ -380,7 +384,7 @@ public class SamsungHomePage {
     public void closeCookies(){
         try {
             driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-            driver.findElement(By.cssSelector(cookiesCloseBtnBanner)).click();
+            driver.findElement(cookiesCloseBtnBanner).click();
         } catch (Exception e1) {
             e1.printStackTrace();
         }
