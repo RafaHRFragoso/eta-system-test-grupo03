@@ -72,8 +72,14 @@ public class SamsungHomePage {
     private By ordenarPorMaisVendidoText = By.xpath("//span[text()='Mais Vendidos']");
 
     //Promoção
-    private By promocaoBtn = By.cssSelector("div.acupula-samsung-store-0-x-footer-column__item:nth-child(2) > div:nth-child(1) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(1) > a:nth-child(1)");
+    private By promocaoBtn = By.cssSelector("#render-store\\.home > div > div.vtex-store__template.bg-base > div > div.samsungbr-samsung-store-0-x-footer > div.samsungbr-samsung-store-0-x-footer-column > div:nth-child(2) > div > div > ul > li:nth-child(1) > a");
     private By promocaoValidate = By.cssSelector(".text-block-container__headline");
+
+    //Menu Informatica
+    private String informaticaMenuBtn = ("li.samsungbr-samsung-store-0-x-gnb__depth1-menu:nth-child(5)");
+    private By numeroDeNotebooks = By.cssSelector("#render-store\\.home > div > div.vtex-store__template.bg-base > div > div:nth-child(3) > div > div:nth-child(2) > section > div.relative.justify-center.flex > div > div.vtex-flex-layout-0-x-flexRow.vtex-flex-layout-0-x-flexRow--resultRow > section > div > div:nth-child(2) > div > div:nth-child(1) > div > div > div:nth-child(1) > div > div > div > span");
+    private By notebookGamerMenuBtn = By.cssSelector("#render-store\\.home > div > div.vtex-store__template.bg-base > div > div.samsungbr-samsung-store-0-x-gnb > div.samsungbr-samsung-store-0-x-gnb__nav > div > div > div.samsungbr-samsung-store-0-x-gnb__menu-wrap.null > div > div.samsungbr-samsung-store-0-x-gnb__main > ul > li.samsungbr-samsung-store-0-x-gnb__depth1-menu.samsungbr-samsung-store-0-x-has-depth-menu.samsungbr-samsung-store-0-x-active > div > div.samsungbr-samsung-store-0-x-gnb__depth2-inner.samsungbr-samsung-store-0-x-active > ul > li.samsungbr-samsung-store-0-x-gnb__depth2-menu.samsungbr-samsung-store-0-x-has-depth-menu.samsungbr-samsung-store-0-x-active > div > div > ul > li:nth-child(4) > a > span");
+
 
     //private By voltarBtnCarrinho = By.cssSelector("body > div[class='container'] > div > div:nth-child(2)");
     private By voltarBtnCarrinho = By.cssSelector(".container >div > div[class='checkout-header-back'] a > svg");
@@ -150,6 +156,13 @@ public class SamsungHomePage {
         WebElement carIcon = driver.findElement(By.cssSelector(carIconHomePage));
         action.moveToElement(carIcon).build().perform();
     }
+
+    public void mouseHoverInformatica(){
+        Actions action = new Actions(driver);
+        WebElement informaticaMenu = driver.findElement(By.cssSelector(informaticaMenuBtn));
+        action.moveToElement(informaticaMenu).build().perform();
+    }
+
 
     //Função para clicar no menu Smartwatches
     public void clickBotaoSmartWatches(){
@@ -379,6 +392,13 @@ public class SamsungHomePage {
                 "Geladeira Frost Free Samsung French Door Twin Cooling Plus™ 470L Inox Look"
                 , mensagemGeladeiraCarrinho);
         System.out.println("Passou!");
+    }
+
+    public void clickNotebookGamerMenu(){driver.findElement(notebookGamerMenuBtn).click();}
+
+    public void imprimeNumeroDeNotebookGamer(){
+        String imprimteNumeroDeNotebooks = driver.findElement(numeroDeNotebooks).getText();
+        System.out.println(imprimteNumeroDeNotebooks);
     }
 
     public void closeCookies(){

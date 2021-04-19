@@ -199,7 +199,7 @@ public class Main {
     }
 
     @Test
-    public void cenario10() throws InterruptedException {
+    public void cenario10(){
         DriverManager.getDriver();
         samsungHomePage = new SamsungHomePage();
         samsungHomePage.waitImplicity();
@@ -212,6 +212,18 @@ public class Main {
 
     }
 
+    @Test
+    public void cenario11(){
+        DriverManager.getDriver();
+        samsungHomePage = new SamsungHomePage();
+        samsungHomePage.waitImplicity();
+        samsungHomePage.clickPopUp();
+        samsungHomePage.closeCookies();
+        samsungHomePage.mouseHoverInformatica();
+        samsungHomePage.clickNotebookGamerMenu();
+        samsungHomePage.imprimeNumeroDeNotebookGamer();
+        DriverManager.endSession();
 
+    }
 
 }
