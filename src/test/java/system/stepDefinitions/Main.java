@@ -181,17 +181,12 @@ public class Main {
         samsungHomePage.clickSearchItemBtn();
         samsungHomePage.sendTextSearchField();
         samsungHomePage.waitExplicityShowFirstItem();
-        samsungHomePage.closeCookies();
-        samsungHomePage.clickItemGeladeira();
+        samsungHomePage.clickComprarGeladeira();
         samsungHomePage.waitExplicityCar();
         samsungHomePage.clickVoltage110Btn();
         samsungHomePage.clickAddCarBtn();
-        samsungHomePage.waitMyCarTextPage();
-        samsungHomePage.validatedMsgMyCarText();
         samsungHomePage.clickVoltarBtnCarrinho();
         samsungHomePage.mouseHoverCarIconHomePage();
-        samsungHomePage.waitGeladeiraExcluirDoCarrinho();
-        samsungHomePage.validadeMenssageGeladeira();
         samsungHomePage.clickRemoveBtn();
         samsungHomePage.validatedValueEmptyMyCarHomePage();
         DriverManager.endSession();
@@ -220,6 +215,7 @@ public class Main {
         samsungHomePage.clickPopUp();
         samsungHomePage.closeCookies();
         samsungHomePage.mouseHoverInformatica();
+        samsungHomePage.waitExplicityNotebookGamerMenuBtn();
         samsungHomePage.clickNotebookGamerMenu();
         samsungHomePage.imprimeNumeroDeNotebookGamer();
         DriverManager.endSession();

@@ -45,6 +45,7 @@ public class SamsungHomePage {
     private By galaxyBudsProColor = By.cssSelector(".pr0.items-stretch.vtex-flex-layout-0-x-stretchChildrenWidth.flex > div > div:nth-child(3) > div > div > div > div > div:nth-child(2) > div:first-child");
     private By voltage110Btn = By.cssSelector(".vtex-store-components-3-x-skuSelectorNameContainer.ma1 > div:nth-child(2) > div[class='vtex-store-components-3-x-skuSelectorItem vtex-store-components-3-x-skuSelectorItem--110-v relative di pointer flex items-center outline-0 ma2'] > div:first-child");
     private By addCarBtn = By.cssSelector(".bg-black-90.mb6.undefined > div > div:nth-child(3) > button");
+    private By comprarGeladeira = By.cssSelector("#render-store\\.home > div > div.vtex-store__template.bg-base > div > div:nth-child(3) > div > div:nth-child(3) > section > div.relative.justify-center.flex > div > div.vtex-flex-layout-0-x-flexRow.vtex-flex-layout-0-x-flexRow--resultRow > section > div > div:nth-child(2) > div > div:nth-child(3) > div > div > div > div.vtex-search-result-3-x-gallery.flex.flex-row.flex-wrap.items-stretch.bn.ph1.na4.pl9-l > div:nth-child(1) > section > a > article > button > div > div");
 
     private By myCarText = By.cssSelector("body > div[class='container'] > div > div:first-child");
     // private String nameGalaxyBudsPro =  "product-name1771";
@@ -109,6 +110,10 @@ public class SamsungHomePage {
 
     public void clickItemGeladeira(){
         driver.findElement(fisrtItemGeladeira).click();
+    }
+
+    public void clickComprarGeladeira(){
+        driver.findElement(comprarGeladeira).click();
     }
 
     public void clickGalaxyBudsProColor(){
@@ -299,6 +304,12 @@ public class SamsungHomePage {
 
     }
 
+    public void waitExplicityNotebookGamerMenuBtn(){
+        wait = new WebDriverWait(driver, 2);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(notebookGamerMenuBtn));
+
+    }
+
     public void waitExplicityShowFirstItem(){
         wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.visibilityOfElementLocated(fisrtItemGeladeira));
@@ -362,6 +373,7 @@ public class SamsungHomePage {
     public void validatedValueEmptyMyCarHomePage(){
         String emptyCarMsgHomepage = driver.findElement(emptyCarMessageHomePage).getText();
         Assertions.assertEquals("Teu carrinho está vazio", emptyCarMsgHomepage);
+        System.out.println("Passou!");
     }
 
     public void validatedCartaoSamsungItaucardText(){
