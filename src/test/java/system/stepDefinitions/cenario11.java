@@ -13,6 +13,7 @@ public class cenario11 {
 
     @Given("o user acessou no site\"")
     public void o_user_acessou_no_site() {
+
         driverManager.getDriver();
     }
     @When("o usuário houver o mouse no menu {string}")
@@ -28,6 +29,7 @@ public class cenario11 {
     }
     @Then("exibe o numero de notebooks encontrados")
     public void exibeONumeroDeNotebooksEncontrados() {
+
         samsungHomePage.imprimeNumeroDeNotebookGamer();
     }
 

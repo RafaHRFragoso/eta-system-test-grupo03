@@ -22,38 +22,42 @@ public class cenario9 {
     public void oUserClicaNoNotaoDePesquisa(String string) {
         samsungHomePage.clickSearchItemBtn();
     }
-    @When("o user digita o nome {string} e tecla enter")
+    @And("o user digita o nome {string} e tecla enter")
     public void oUserDigitaONomeETeclaEnter(String string) throws InterruptedException {
         samsungHomePage.sendTextSearchField();
     }
-    @When("o usuário clica no botao comprar geladeira desejada")
+    @And("o usuário clica no botao comprar geladeira desejada")
     public void oUsuárioClicaNoBotaoComprarGeladeiraDesejada() {
         samsungHomePage.waitExplicityShowFirstItem();
         samsungHomePage.clickComprarGeladeira();
     }
-    @When("o user escolhe a voltagem da geladeira clicando no botão {string}")
+    @And("o user escolhe a voltagem da geladeira clicando no botão {string}")
     public void oUserEscolheAVoltagemDaGeladeiraClicandoNoBotão(String string) {
         samsungHomePage.waitExplicityCar();
         samsungHomePage.clickVoltage110Btn();
     }
-    @When("o user adiciona a geladeira clicando no botão {string}")
+    @And("o user adiciona a geladeira clicando no botão {string}")
     public void oUserAdicionaAGeladeiraClicandoNoBotão(String string) {
-         samsungHomePage.clickAddCarBtn();
+
+        samsungHomePage.clickAddCarBtn();
     }
-    @When("o user clica no botao {string}")
-    public void oUserClicaNoBotaoVoltar(String string) {
+    @And("o user clica no botao {string}")
+    public void oUserClicaNoBotaoVoltar(String string) throws InterruptedException {
         samsungHomePage.clickVoltarBtnCarrinho();
     }
-    @When("o user houver o mouse no {string}")
+    @And("o user houver o mouse no {string}")
     public void oUserHouverOMouseNoIconeDoCarrinho(String string) {
+
         samsungHomePage.mouseHoverCarIconHomePage();
     }
-    @When("o user clica no botao {string} do carrinho")
+    @And("o user clica no botao {string} do carrinho")
     public void oUserClicaNoBotaoExcluirDoCarrinho(String string) {
+
         samsungHomePage.clickRemoveBtn();
     }
     @Then("o user valida a mensagem de carrinho vazio")
     public void oUserValidaAMensagemDeCarrinhoVazio() {
+
         samsungHomePage.validatedValueEmptyMyCarHomePage();
     }
 

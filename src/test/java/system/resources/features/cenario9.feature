@@ -1,6 +1,6 @@
 #language: en
 
-@cenario4
+@cenario9
 Feature: Excluir geladeira no carrinho na home page
   Como usuário potencial
   Eu quero adicionar um item no carrinho

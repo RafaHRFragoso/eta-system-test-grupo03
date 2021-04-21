@@ -21,14 +21,14 @@ public class SamsungHomePage {
     private By popBtnNaoObrigado = By.xpath("//button[contains(text(),'NÃO, OBRIGADO.')]");
     private By cookiesCloseBtnBanner = By.id("banner-cookie");
     private String telefoniaMenuBtn = ".samsungbr-samsung-store-0-x-gnb__depth1 > li:first-child > a > span[class='samsungbr-samsung-store-0-x-gnb__depth1-link-text']";
-    //private String telefoniaMenuBtn = "div[class='acupula-samsung-store-0-x-gnb__depth1-container'] > div > ul > li > a[data-omni='TELEFONIA']";
+
     private By smartWatchesMenuBtn = By.xpath("//span[text()='Smartwatches']");
     private String listCompleteNane = "h3.samsungbr-samsung-store-0-x-productBrand.samsungbr-samsung-store-0-x-nameComplete";
-    //private String listCompleteNane = "h3.acupula-samsung-store-0-x-productBrand.acupula-samsung-store-0-x-nameComplete";
+
     private By thirdItem = By.cssSelector("div[class='vtex-search-result-3-x-gallery flex flex-row flex-wrap items-stretch bn ph1 na4 pl9-l'] > div:nth-child(3)");
     private By showMoreSpecificationBtn = By.cssSelector("#inpage_container > div:nth-child(4) > div > div:nth-child(2) > div > div > div[title='Mostrar mais ESPECIFICAÇÕES']");
     private String specificationsName = "div.inpage_block.flix-specs.flix-hidden2";
-    //private By serviceCenterBtn = By.cssSelector("a[data-omni='footer:suporte_centro de serviços']");
+
     private By serviceCenterBtn = By.xpath("//a[text()='Centro de Serviços']");
     private By mobileMenuBtn = By.id("tab10001");
     private By searchItem = By.id("searchItem");
@@ -38,19 +38,15 @@ public class SamsungHomePage {
     //Novos elementos para pesquisar e adicionar um produto no carrinho
     private By searchBtn = By.cssSelector("li.undefined .samsungbr-samsung-store-0-x-gnb__search-btn > svg[id='search-bold']");
     private By serachTextField = By.id("downshift-0-input");
-    //private By fisrtItemGeladeira = By.cssSelector(".vtex-search-result-3-x-resultGallery > div:nth-child(3) > div:first-child");
-    //private By fisrtItemGeladeira = By.cssSelector (".vtex-search-result-3-x-resultGallery > div:nth-child(3) > div:first-child > section > a > article > button");
+
     private By fisrtItemGeladeira = By.cssSelector("div[class='pr0 items-stretch vtex-flex-layout-0-x-stretchChildrenWidth   flex'] > div:nth-child(2) > div:first-child");
-    //private By galaxyBudsProBtn = By.cssSelector("img[alt='Galaxy Buds Pro']");
-    private By galaxyBudsProColor = By.cssSelector(".pr0.items-stretch.vtex-flex-layout-0-x-stretchChildrenWidth.flex > div > div:nth-child(3) > div > div > div > div > div:nth-child(2) > div:first-child");
-    private By voltage110Btn = By.cssSelector(".vtex-store-components-3-x-skuSelectorNameContainer.ma1 > div:nth-child(2) > div[class='vtex-store-components-3-x-skuSelectorItem vtex-store-components-3-x-skuSelectorItem--110-v relative di pointer flex items-center outline-0 ma2'] > div:first-child");
-    private By addCarBtn = By.cssSelector(".bg-black-90.mb6.undefined > div > div:nth-child(3) > button");
     private By comprarGeladeira = By.cssSelector("#render-store\\.home > div > div.vtex-store__template.bg-base > div > div:nth-child(3) > div > div:nth-child(3) > section > div.relative.justify-center.flex > div > div.vtex-flex-layout-0-x-flexRow.vtex-flex-layout-0-x-flexRow--resultRow > section > div > div:nth-child(2) > div > div:nth-child(3) > div > div > div > div.vtex-search-result-3-x-gallery.flex.flex-row.flex-wrap.items-stretch.bn.ph1.na4.pl9-l > div:nth-child(1) > section > a > article > button > div > div");
 
+    //private By galaxyBudsProColor = By.cssSelector(".pr0.items-stretch.vtex-flex-layout-0-x-stretchChildrenWidth.flex > div > div:nth-child(3) > div > div > div > div > div:nth-child(2) > div:first-child");
+    private By voltage110Btn = By.cssSelector(".vtex-store-components-3-x-skuSelectorNameContainer.ma1 > div:nth-child(2) > div[class='vtex-store-components-3-x-skuSelectorItem vtex-store-components-3-x-skuSelectorItem--110-v relative di pointer flex items-center outline-0 ma2'] > div:first-child");
+    private By addCarBtn = By.cssSelector(".bg-black-90.mb6.undefined > div > div:nth-child(3) > button");
+
     private By myCarText = By.cssSelector("body > div[class='container'] > div > div:first-child");
-    // private String nameGalaxyBudsPro =  "product-name1771";
-    //Seletor da quantidade no carrinho na tela do carrinho
-    //private String qntCarItem = "item-quantity-1771";
 
     //Novos elementos para fazer um novo cenário
     private By removeItemCar = By.cssSelector(".item-remove > a[class='item-link-remove data-omni-remove']");
@@ -63,17 +59,16 @@ public class SamsungHomePage {
     //Itaú card botão
     private By itauCardBtn = By.cssSelector("div[class='samsungbr-samsung-store-0-x-gnb__sub'] > div > div");
     private By pecaOSeuBtn = By.cssSelector("div[data-testid='base-modal'] > div > div > a:nth-child(2)");
-    //private By pecaOSeuBtn = By.cssSelector(".vtex-rich-text-0-x-wrapper.vtex-rich-text-0-x-wrapper--button-samsungItau > p > a");
     private By cartaoSamsungItaucardText = By.cssSelector(".floating-navigation__headline  > strong[class='floating-navigation__headline-text'] > em");
 
     //telefonia titulo
-    private By telefoniaTitle = By.cssSelector(".acupula-samsung-store-0-x-gnb__depth2-wrap > div:nth-child(2) > div > strong > a[href='/br/mobile']");
-    private By ordenarPorRelevanciaBtn = By.cssSelector(".vtex-search-result-3-x-orderBy > div > button > span > span");
-    private By maisVendidoOrdemBtn = By.cssSelector(".vtex-search-result-3-x-orderBy > div > div > button:nth-child(2)");
+    private By telefoniaTitle = By.xpath("//a[text()='Telefonia']");
+    private By ordenarPorRelevanciaBtn = By.xpath("//span[text()='Relevância']");
+    private By maisVendidoOrdemBtn = By.xpath("//button[text()='Mais Vendidos']");
     private By ordenarPorMaisVendidoText = By.xpath("//span[text()='Mais Vendidos']");
 
     //Promoção
-    private By promocaoBtn = By.cssSelector("#render-store\\.home > div > div.vtex-store__template.bg-base > div > div.samsungbr-samsung-store-0-x-footer > div.samsungbr-samsung-store-0-x-footer-column > div:nth-child(2) > div > div > ul > li:nth-child(1) > a");
+    private By promocaoBtn = By.linkText("Promoções");
     private By promocaoValidate = By.cssSelector(".text-block-container__headline");
 
     //Menu Informatica
@@ -81,18 +76,13 @@ public class SamsungHomePage {
     private By numeroDeNotebooks = By.cssSelector("#render-store\\.home > div > div.vtex-store__template.bg-base > div > div:nth-child(3) > div > div:nth-child(2) > section > div.relative.justify-center.flex > div > div.vtex-flex-layout-0-x-flexRow.vtex-flex-layout-0-x-flexRow--resultRow > section > div > div:nth-child(2) > div > div:nth-child(1) > div > div > div:nth-child(1) > div > div > div > span");
     private By notebookGamerMenuBtn = By.cssSelector("#render-store\\.home > div > div.vtex-store__template.bg-base > div > div.samsungbr-samsung-store-0-x-gnb > div.samsungbr-samsung-store-0-x-gnb__nav > div > div > div.samsungbr-samsung-store-0-x-gnb__menu-wrap.null > div > div.samsungbr-samsung-store-0-x-gnb__main > ul > li.samsungbr-samsung-store-0-x-gnb__depth1-menu.samsungbr-samsung-store-0-x-has-depth-menu.samsungbr-samsung-store-0-x-active > div > div.samsungbr-samsung-store-0-x-gnb__depth2-inner.samsungbr-samsung-store-0-x-active > ul > li.samsungbr-samsung-store-0-x-gnb__depth2-menu.samsungbr-samsung-store-0-x-has-depth-menu.samsungbr-samsung-store-0-x-active > div > div > ul > li:nth-child(4) > a > span");
 
-
     //private By voltarBtnCarrinho = By.cssSelector("body > div[class='container'] > div > div:nth-child(2)");
-    private By voltarBtnCarrinho = By.cssSelector(".container >div > div[class='checkout-header-back'] a > svg");
+    private By voltarBtnCarrinho = By.cssSelector(".samsungbr-vtexcommercestable-com-br.body-cart > div.container > div:first-child > div:nth-child(2) > a > svg");
+    private By avisoImportantePopUp = By.xpath("//span[text()='Aviso Importante']");
+
     private By removeBtn = By.id("remove-button-1896");
     private By checkOut= By.id("proceed-to-checkout");
     private By menssageGeladeira = By.cssSelector(".vtex-flex-layout-0-x-flexRow.vtex-flex-layout-0-x-flexRow--listRow > section > div > div:nth-child(2) > div > div > div > div > div:first-child > div > div:nth-child(2)");
-
-
-
-//span[text()="Mais Vendidos"]
-    //private By ordenarPorMaisVendidoText = By.cssSelector(".vtex-search-result-3-x-orderBy > div > button");
-    //private By ordenarPorMaisVendidoText = By.cssSelector(".vtex-search-result-3-x-orderBy > div > button > span > span");
 
     //Construtor
     public SamsungHomePage(){
@@ -100,13 +90,10 @@ public class SamsungHomePage {
         this.wait = DriverManager.getDriverWait();
 
     }
+
     public void clickSearchItemBtn(){
         driver.findElement(searchBtn).click();
     }
-
-   /* public void clickCarIconHomePage(){
-        driver.findElement(carIconHomePage).click();
-    }*/
 
     public void clickItemGeladeira(){
         driver.findElement(fisrtItemGeladeira).click();
@@ -116,15 +103,12 @@ public class SamsungHomePage {
         driver.findElement(comprarGeladeira).click();
     }
 
-    public void clickGalaxyBudsProColor(){
-        driver.findElement(galaxyBudsProColor);
-    }
-
     public void clickAddCarBtn(){
         driver.findElement(addCarBtn).click();
     }
 
-    public void clickRemoveItemCarBtn(){
+    public void clickRemoveItemCarBtn() throws InterruptedException {
+        Thread.sleep(20000);
         driver.findElement(removeItemCar).click();
     }
 
@@ -135,6 +119,7 @@ public class SamsungHomePage {
 
     public void clickVoltage110Btn(){
         driver.findElement(voltage110Btn).click();
+        waitImplicity();
     }
 
     public void clickItauCardBtn(){
@@ -145,29 +130,18 @@ public class SamsungHomePage {
         driver.findElement(telefoniaTitle).click();
     }
 
-    public void clickVoltarBtnCarrinho(){driver.findElement(voltarBtnCarrinho).click();}
-
-    public void clickRemoveBtn(){driver.findElement(removeBtn).click();}
-
-    //Função do hover do mouse
-    public void mouseHover(){
-        Actions action = new Actions(driver);
-        WebElement telefoniaMenu = driver.findElement(By.cssSelector(telefoniaMenuBtn));
-        action.moveToElement(telefoniaMenu).build().perform();
+    public void clickVoltarBtnCarrinho() throws InterruptedException {
+        Thread.sleep(20000);
+        driver.findElement(voltarBtnCarrinho).click();
     }
 
-    public void mouseHoverCarIconHomePage(){
-        Actions action = new Actions(driver);
-        WebElement carIcon = driver.findElement(By.cssSelector(carIconHomePage));
-        action.moveToElement(carIcon).build().perform();
+    public void clickavisoImportantePopUp(){
+        driver.findElement(avisoImportantePopUp).click();
     }
 
-    public void mouseHoverInformatica(){
-        Actions action = new Actions(driver);
-        WebElement informaticaMenu = driver.findElement(By.cssSelector(informaticaMenuBtn));
-        action.moveToElement(informaticaMenu).build().perform();
+    public void clickRemoveBtn(){
+        driver.findElement(removeBtn).click();
     }
-
 
     //Função para clicar no menu Smartwatches
     public void clickBotaoSmartWatches(){
@@ -191,14 +165,41 @@ public class SamsungHomePage {
         driver.findElement(kmBtn20Km).click();
         waitImplicity();
     }
+
     public void clickMaisVendidoOrdemBtn(){
         driver.findElement(maisVendidoOrdemBtn).click();
     }
 
-   /*public void validatedProductName(){
-        WebElement productName = driver.findElement(By.cssSelector(nameGalaxyBudsPro));
-        productName.getText();
-    }*/
+    public void clickThirdItem(){
+        driver.findElement(thirdItem).click();
+    }
+
+    public void clickPromocao(){
+        driver.findElement(promocaoBtn).click();
+    }
+
+    public void clickNotebookGamerMenu(){
+        driver.findElement(notebookGamerMenuBtn).click();
+    }
+
+    //Função do hover do mouse
+    public void mouseHover(){
+        Actions action = new Actions(driver);
+        WebElement telefoniaMenu = driver.findElement(By.cssSelector(telefoniaMenuBtn));
+        action.moveToElement(telefoniaMenu).build().perform();
+    }
+
+    public void mouseHoverCarIconHomePage(){
+        Actions action = new Actions(driver);
+        WebElement carIcon = driver.findElement(By.cssSelector(carIconHomePage));
+        action.moveToElement(carIcon).build().perform();
+    }
+
+    public void mouseHoverInformatica(){
+        Actions action = new Actions(driver);
+        WebElement informaticaMenu = driver.findElement(By.cssSelector(informaticaMenuBtn));
+        action.moveToElement(informaticaMenu).build().perform();
+    }
 
     public void sendTextSearchItem(){
         driver.findElement(searchItem).sendKeys("51010-000");
@@ -274,7 +275,6 @@ public class SamsungHomePage {
 
     }
 
-
     public void listElements2(){
         List<WebElement> elements = driver.findElements(
                 By.cssSelector(groupServiceCenter));
@@ -284,10 +284,16 @@ public class SamsungHomePage {
 
     }
 
+    public void imprimeNumeroDeNotebookGamer(){
+        String imprimteNumeroDeNotebooks = driver.findElement(numeroDeNotebooks).getText();
+        System.out.println(imprimteNumeroDeNotebooks);
+    }
+
     //Função de uma espera implicita
     public void waitImplicity(){
         driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
     }
+
     public void waitImplicitySpecial(){
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
@@ -298,15 +304,10 @@ public class SamsungHomePage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(smartWatchesMenuBtn));
 
     }
+
     public void waitExplicityShowMoreSpecificationBtn(){
         wait = new WebDriverWait(driver, 2);
         wait.until(ExpectedConditions.visibilityOfElementLocated(showMoreSpecificationBtn));
-
-    }
-
-    public void waitExplicityNotebookGamerMenuBtn(){
-        wait = new WebDriverWait(driver, 2);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(notebookGamerMenuBtn));
 
     }
 
@@ -315,16 +316,19 @@ public class SamsungHomePage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(fisrtItemGeladeira));
 
     }
+
     public void waitExplicityCar(){
         wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.visibilityOfElementLocated(addCarBtn));
 
     }
+
     public void waitMyCarTextPage(){
         wait = new WebDriverWait(driver, 5);
         wait.until(ExpectedConditions.visibilityOfElementLocated(myCarText));
 
     }
+
     public void waitEmptyCarMessageHomePage(){
         wait = new WebDriverWait(driver, 5);
         wait.until(ExpectedConditions.visibilityOfElementLocated(emptyCarMessageHomePage));
@@ -362,18 +366,25 @@ public class SamsungHomePage {
 
     }
 
+    public void waitExplicityNotebookGamerMenuBtn(){
+        wait = new WebDriverWait(driver, 2);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(notebookGamerMenuBtn));
+
+    }
+
     public void validatedMsgMyCarText(){
         String myCarMsg = driver.findElement(myCarText).getText();
         Assertions.assertEquals("Meu carrinho", myCarMsg);
     }
+
     public void validatedValueEmptyMyCar(){
         String emptyCarMsg = driver.findElement(emptyCarMessage).getText();
         Assertions.assertEquals("Seu carrinho está vazio.", emptyCarMsg);
     }
+
     public void validatedValueEmptyMyCarHomePage(){
         String emptyCarMsgHomepage = driver.findElement(emptyCarMessageHomePage).getText();
         Assertions.assertEquals("Teu carrinho está vazio", emptyCarMsgHomepage);
-        System.out.println("Passou!");
     }
 
     public void validatedCartaoSamsungItaucardText(){
@@ -385,12 +396,6 @@ public class SamsungHomePage {
         String textOrdenarPorMaisVendido = driver.findElement(ordenarPorMaisVendidoText).getText();
         Assertions.assertEquals("ORDENAR POR MAIS VENDIDOS", textOrdenarPorMaisVendido);
     }
-
-    public void clickThirdItem(){
-        driver.findElement(thirdItem).click();
-    }
-
-    public void clickPromocao(){driver.findElement(promocaoBtn).click();}
 
     public void validatePagePromocoes(){
         String pagePromocoes = driver.findElement(promocaoValidate).getText();
@@ -406,13 +411,6 @@ public class SamsungHomePage {
         System.out.println("Passou!");
     }
 
-    public void clickNotebookGamerMenu(){driver.findElement(notebookGamerMenuBtn).click();}
-
-    public void imprimeNumeroDeNotebookGamer(){
-        String imprimteNumeroDeNotebooks = driver.findElement(numeroDeNotebooks).getText();
-        System.out.println(imprimteNumeroDeNotebooks);
-    }
-
     public void closeCookies(){
         try {
             driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
@@ -421,4 +419,18 @@ public class SamsungHomePage {
             e1.printStackTrace();
         }
     }
+    //Tentando fazer um switchTo
+    /*public void switchToMetodo1(){
+        try {
+            driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+            driver.findElement(cookiesCloseBtnBanner).click();
+        } catch (Exception e1) {
+            e1.printStackTrace();
+        }
+    }
+    public void switchToMetodo(){
+        driver.switchTo().frame(driver.findElement(avisoImportantePopUp));
+        clickavisoImportantePopUp();
+        driver.switchTo().defaultContent();
+    }*/
 }

@@ -41,7 +41,7 @@ public class Main {
     @Test
     @Disabled
     void cenario2() {
-       // driverManager.getDriver();
+        // driverManager.getDriver();
         DriverManager.getDriver();
         samsungHomePage = new SamsungHomePage();
         samsungHomePage.waitImplicity();
@@ -181,12 +181,17 @@ public class Main {
         samsungHomePage.clickSearchItemBtn();
         samsungHomePage.sendTextSearchField();
         samsungHomePage.waitExplicityShowFirstItem();
-        samsungHomePage.clickComprarGeladeira();
+        samsungHomePage.closeCookies();
+        samsungHomePage.clickItemGeladeira();
         samsungHomePage.waitExplicityCar();
         samsungHomePage.clickVoltage110Btn();
         samsungHomePage.clickAddCarBtn();
+        samsungHomePage.waitMyCarTextPage();
+        samsungHomePage.validatedMsgMyCarText();
         samsungHomePage.clickVoltarBtnCarrinho();
         samsungHomePage.mouseHoverCarIconHomePage();
+        samsungHomePage.waitGeladeiraExcluirDoCarrinho();
+        samsungHomePage.validadeMenssageGeladeira();
         samsungHomePage.clickRemoveBtn();
         samsungHomePage.validatedValueEmptyMyCarHomePage();
         DriverManager.endSession();
@@ -194,13 +199,13 @@ public class Main {
     }
 
     @Test
-    public void cenario10(){
+    public void cenario10() throws InterruptedException {
         DriverManager.getDriver();
         samsungHomePage = new SamsungHomePage();
         samsungHomePage.waitImplicity();
         samsungHomePage.clickPopUp();
-        samsungHomePage.closeCookies();
         samsungHomePage.scrollScreenUntilFooter();
+        samsungHomePage.closeCookies();
         samsungHomePage.clickPromocao();
         samsungHomePage.validatePagePromocoes();
         DriverManager.endSession();

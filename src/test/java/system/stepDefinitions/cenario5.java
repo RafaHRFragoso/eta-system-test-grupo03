@@ -44,7 +44,7 @@ public class cenario5 {
         samsungHomePage.clickAddCarBtn();
     }
     @And("o usuário remove o item do carrinho clicando no botão {string}")
-    public void oUsuárioRemoveOItemDoCarrinhoClicandoNoBotão(String string) {
+    public void oUsuárioRemoveOItemDoCarrinhoClicandoNoBotão(String string) throws InterruptedException {
         samsungHomePage.waitMyCarTextPage();
         samsungHomePage.clickRemoveItemCarBtn();
     }
