@@ -22,9 +22,10 @@ public class cenario12 {
     public void oUsuárioClicaNoBotãoDe(String string) {
         samsungHomePage.clickSearchItemBtn();
     }
+
     @And("o usuário digita o nome {string} e tecla enter")
     public void oUsuárioDigitaONomeETeclaEnter(String string) throws InterruptedException {
-        samsungHomePage.sendTextSearchField();
+        samsungHomePage.PesquisarItem();
     }
     @And("o usuário clica no aparelho desejado")
     public void oUsuárioClicaNoAparelhoDesejado() {

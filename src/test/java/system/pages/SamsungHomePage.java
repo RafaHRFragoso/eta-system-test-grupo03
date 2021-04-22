@@ -117,6 +117,10 @@ public class SamsungHomePage {
         driver.findElement(removeItemCar).click(); }
 
     // Funcao para atender ao cenario 12 * Grace Amaral *
+    public void PesquisarItem () throws InterruptedException {
+        driver.findElement(serachTextField).sendKeys("Galaxy A72 Preto 128GB" + Keys.ENTER);
+
+    }
     public void clickItemAparelho(){
         driver.findElement(ItemAparelho).click(); }
 
