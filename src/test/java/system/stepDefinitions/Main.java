@@ -235,8 +235,7 @@ public class Main {
         samsungHomePage.clickPopUp();
         samsungHomePage.closeCookies();
         samsungHomePage.clickSearchItemBtn();
-        samsungHomePage.sendTextSearchField();
-        samsungHomePage.waitExplicityShowFirstItem();
+        samsungHomePage.sendTextSearchField2();
         samsungHomePage.closeCookies();
         samsungHomePage.clickItemAparelho();
         samsungHomePage.waitExplicityCar();

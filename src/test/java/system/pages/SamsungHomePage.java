@@ -49,7 +49,8 @@ public class SamsungHomePage {
     private By myCarText = By.cssSelector("body > div[class='container'] > div > div:first-child");
 
     // Elementos cenario 12 * Grace Amaral *
-    private By ItemAparelho = By.cssSelector("vtex-store-components-3-x-container ph3 ph5-m ph2-xl mw9 center vtex-search-result-3-x-searchResultContainer pt3-m pt5-l");
+    //private By PesquisarAparelho = By.cssSelector("vtex-styleguide-9-x-input ma0 border-box vtex-styleguide-9-x-hideDecorators vtex-styleguide-9-x-noAppearance br2  br-0 br--left  w-100 bn outline-0 bg-base c-on-base b--muted-4 hover-b--muted-3 t-body pl5 ");
+    private By ItemAparelho = By.cssSelector("vtex-product-summary-2-x-imageNormal vtex-product-summary-2-x-image");
     private By modeloAparelho = By.cssSelector("vtex-store-components-3-x-frameAround absolute b--action-primary br3 bw1 ba");
     private By corAparelho = By.cssSelector("vtex-store-components-3-x-skuSelectorItem vtex-store-components-3-x-skuSelectorItem--preto vtex-store-components-3-x-skuSelectorItem--selected relative di pointer flex items-center outline-0 ma2 vtex-store-components-3-x-skuSelectorItemImage");
     private By memoriaAparelho = By.cssSelector("vtex-store-components-3-x-frameAround absolute b--action-primary br3 bw1");
@@ -117,7 +118,9 @@ public class SamsungHomePage {
         driver.findElement(removeItemCar).click(); }
 
     // Funcao para atender ao cenario 12 * Grace Amaral *
-    public void PesquisarItem () throws InterruptedException {
+
+
+    public void sendTextSearchField2 () throws InterruptedException {
         driver.findElement(serachTextField).sendKeys("Galaxy A72 Preto 128GB" + Keys.ENTER);
 
     }

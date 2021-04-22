@@ -25,11 +25,11 @@ public class cenario12 {
 
     @And("o usuário digita o nome {string} e tecla enter")
     public void oUsuárioDigitaONomeETeclaEnter(String string) throws InterruptedException {
-        samsungHomePage.PesquisarItem();
+        samsungHomePage.sendTextSearchField2();
     }
     @And("o usuário clica no aparelho desejado")
     public void oUsuárioClicaNoAparelhoDesejado() {
-        samsungHomePage.waitExplicityShowFirstItem();
+       // samsungHomePage.waitExplicityShowFirstItem();
         samsungHomePage.closeCookies();
         samsungHomePage.clickItemAparelho();
     }
