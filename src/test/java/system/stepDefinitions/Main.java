@@ -227,4 +227,26 @@ public class Main {
 
     }
 
+    @Test
+    public void cenario12() throws InterruptedException {
+        DriverManager.getDriver();
+        samsungHomePage = new SamsungHomePage();
+        samsungHomePage.waitImplicity();
+        samsungHomePage.clickPopUp();
+        samsungHomePage.closeCookies();
+        samsungHomePage.clickSearchItemBtn();
+        samsungHomePage.sendTextSearchField();
+        samsungHomePage.waitExplicityShowFirstItem();
+        samsungHomePage.closeCookies();
+        samsungHomePage.clickItemAparelho();
+        samsungHomePage.waitExplicityCar();
+        samsungHomePage.clickModeloA32GBtn();
+        samsungHomePage.clickCorAparelhoBtn();
+        samsungHomePage.clickMemoriaAparelhoBtn();
+        samsungHomePage.clickAddCarBtn();
+        samsungHomePage.waitMyCarTextPage();
+        samsungHomePage.validatedMsgMyCarText();
+        DriverManager.endSession();
+    }
+
 }

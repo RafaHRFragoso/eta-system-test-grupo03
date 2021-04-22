@@ -48,6 +48,13 @@ public class SamsungHomePage {
 
     private By myCarText = By.cssSelector("body > div[class='container'] > div > div:first-child");
 
+    // Elementos cenario 12 * Grace Amaral *
+    private By ItemAparelho = By.cssSelector("vtex-store-components-3-x-container ph3 ph5-m ph2-xl mw9 center vtex-search-result-3-x-searchResultContainer pt3-m pt5-l");
+    private By modeloAparelho = By.cssSelector("vtex-store-components-3-x-frameAround absolute b--action-primary br3 bw1 ba");
+    private By corAparelho = By.cssSelector("vtex-store-components-3-x-skuSelectorItem vtex-store-components-3-x-skuSelectorItem--preto vtex-store-components-3-x-skuSelectorItem--selected relative di pointer flex items-center outline-0 ma2 vtex-store-components-3-x-skuSelectorItemImage");
+    private By memoriaAparelho = By.cssSelector("vtex-store-components-3-x-frameAround absolute b--action-primary br3 bw1");
+    private By addCarrinhoBtn = By.cssSelector("vtex-button__label flex items-center justify-center h-100 ph6 ");
+
     //Novos elementos para fazer um novo cenário
     private By removeItemCar = By.cssSelector(".item-remove > a[class='item-link-remove data-omni-remove']");
     private By emptyCarMessage = By.cssSelector(".cart-template.full-cart.span12.active > div > div > h2");
@@ -96,21 +103,37 @@ public class SamsungHomePage {
     }
 
     public void clickItemGeladeira(){
-        driver.findElement(fisrtItemGeladeira).click();
-    }
+        driver.findElement(fisrtItemGeladeira).click(); }
 
     public void clickComprarGeladeira(){
         driver.findElement(comprarGeladeira).click();
     }
 
     public void clickAddCarBtn(){
-        driver.findElement(addCarBtn).click();
-    }
+        driver.findElement(addCarBtn).click(); }
 
     public void clickRemoveItemCarBtn() throws InterruptedException {
         Thread.sleep(20000);
-        driver.findElement(removeItemCar).click();
-    }
+        driver.findElement(removeItemCar).click(); }
+
+    // Funcao para atender ao cenario 12 * Grace Amaral *
+    public void clickItemAparelho(){
+        driver.findElement(ItemAparelho).click(); }
+
+    public void clickModeloA32GBtn(){
+        driver.findElement(modeloAparelho).click();
+        waitImplicity(); }
+
+    public void clickCorAparelhoBtn(){
+        driver.findElement(corAparelho).click();
+        waitImplicity(); }
+
+    public void clickMemoriaAparelhoBtn(){
+        driver.findElement(modeloAparelho).click();
+        waitImplicity(); }
+
+    public void clickAddCarrinhoBtn(){
+        driver.findElement(addCarrinhoBtn).click(); }
 
     //Função para clicar na opção NÃO, OBRIGADO do Pop-Up
     public void clickPopUp(){
