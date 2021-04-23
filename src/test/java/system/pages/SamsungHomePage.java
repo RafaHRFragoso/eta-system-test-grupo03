@@ -30,6 +30,7 @@ public class SamsungHomePage {
     private String specificationsName = "div.inpage_block.flix-specs.flix-hidden2";
 
     private By serviceCenterBtn = By.xpath("//a[text()='Centro de Serviços']");
+    private By faleConoscoBtn = By.xpath("//a[text()='Fale Conosco']");
     private By mobileMenuBtn = By.id("tab10001");
     private By searchItem = By.id("searchItem");
     private By kmBtn20Km = By.cssSelector("a[data-emit-name='Km:20']");
@@ -91,6 +92,12 @@ public class SamsungHomePage {
     private By removeBtn = By.id("remove-button-1896");
     private By checkOut= By.id("proceed-to-checkout");
     private By menssageGeladeira = By.cssSelector(".vtex-flex-layout-0-x-flexRow.vtex-flex-layout-0-x-flexRow--listRow > section > div > div:nth-child(2) > div > div > div > div > div:first-child > div > div:nth-child(2)");
+
+    //Elementos cenario13
+    private By faleconoscoButton = By.cssSelector("a:contains('Fale Conosco')");
+    private By titleContactSession = By.cssSelector("#contactinfo h2");
+    private By cardContactTitle = By.cssSelector("#contactinfo .card-visible:nth-child(1) h3");
+    private By cardContactContent = By.cssSelector("#contactinfo .card-visible:nth-child(1) span");
 
     //Construtor
     public SamsungHomePage(){
@@ -163,6 +170,10 @@ public class SamsungHomePage {
     public void clickVoltarBtnCarrinho() throws InterruptedException {
         Thread.sleep(20000);
         driver.findElement(voltarBtnCarrinho).click();
+    }
+
+    public void clickSupportFaleConoscoBtn(){
+        driver.findElement(faleConoscoBtn).click();
     }
 
     public void clickavisoImportantePopUp(){
@@ -440,6 +451,26 @@ public class SamsungHomePage {
                 , mensagemGeladeiraCarrinho);
         System.out.println("Passou!");
     }
+
+    public void validatePageTitle(String title_page){
+        String actualTitle = driver.getTitle();
+        String expectedTitle = title_page;
+        Assertions.assertEquals(expectedTitle,actualTitle);
+    }
+
+    public void validateTitleContactSession(){
+        String contactSession = driver.findElement(titleContactSession).getText();
+        Assertions.assertEquals("Canais de contato",contactSession);
+    }
+
+    public void getCardContactInfos(){
+        String cardTitle = driver.findElement(cardContactTitle).getText();
+        String cardContent = driver.findElement(cardContactContent).getText();
+        System.out.println(cardTitle);
+        System.out.println(cardContent);
+
+    }
+
 
     public void closeCookies(){
         try {
