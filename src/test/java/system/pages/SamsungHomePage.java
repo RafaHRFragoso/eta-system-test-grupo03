@@ -50,12 +50,11 @@ public class SamsungHomePage {
     private By myCarText = By.cssSelector("body > div[class='container'] > div > div:first-child");
 
     // Elementos cenario 12 * Grace Amaral *
-    //private By PesquisarAparelho = By.cssSelector("vtex-styleguide-9-x-input ma0 border-box vtex-styleguide-9-x-hideDecorators vtex-styleguide-9-x-noAppearance br2  br-0 br--left  w-100 bn outline-0 bg-base c-on-base b--muted-4 hover-b--muted-3 t-body pl5 ");
-    private By ItemAparelho = By.cssSelector("vtex-product-summary-2-x-imageNormal vtex-product-summary-2-x-image");
-    private By modeloAparelho = By.cssSelector("vtex-store-components-3-x-frameAround absolute b--action-primary br3 bw1 ba");
-    private By corAparelho = By.cssSelector("vtex-store-components-3-x-skuSelectorItem vtex-store-components-3-x-skuSelectorItem--preto vtex-store-components-3-x-skuSelectorItem--selected relative di pointer flex items-center outline-0 ma2 vtex-store-components-3-x-skuSelectorItemImage");
-    private By memoriaAparelho = By.cssSelector("vtex-store-components-3-x-frameAround absolute b--action-primary br3 bw1");
-    private By addCarrinhoBtn = By.cssSelector("vtex-button__label flex items-center justify-center h-100 ph6 ");
+    private By ItemAparelho = By.cssSelector(".vtex-store-components-3-x-discountContainer.relative.dib > div:nth-child(2) > img[alt='Galaxy A32']");
+    private By modeloAparelho = By.cssSelector(".vtex-store-components-3-x-skuSelectorNameContainer.ma1 > div:nth-child(2) > div[class='vtex-store-components-3-x-skuSelectorItem vtex-store-components-3-x-skuSelectorItem--a32 relative di pointer flex items-center outline-0 ma2']");
+    private By corAparelho = By.cssSelector("#sku-selector-model > div > div:nth-child(2) > div > div:nth-child(2) > div:first-child");
+    private By memoriaAparelho = By.cssSelector("#sku-selector-model > div > div:nth-child(3) > div > div:nth-child(2) > div");
+    private By addCarrinhoBtn = By.cssSelector("#productprice > div.ttu.samsungbr-samsung-store-0-x-ProductBuyButton > button > div");
 
     //Novos elementos para fazer um novo cenário
     private By removeItemCar = By.cssSelector(".item-remove > a[class='item-link-remove data-omni-remove']");
@@ -132,18 +131,27 @@ public class SamsungHomePage {
 
     }
     public void clickItemAparelho(){
+        waitImplicity();
         driver.findElement(ItemAparelho).click(); }
 
     public void clickModeloA32GBtn(){
+        JavascriptExecutor js1 = (JavascriptExecutor) driver;
+        js1.executeScript("window.scrollBy(0,300)");
         driver.findElement(modeloAparelho).click();
         waitImplicity(); }
+
+    public void waitExplicityShowFirstItemCelular(){
+        wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(ItemAparelho));}
 
     public void clickCorAparelhoBtn(){
         driver.findElement(corAparelho).click();
         waitImplicity(); }
 
     public void clickMemoriaAparelhoBtn(){
-        driver.findElement(modeloAparelho).click();
+        JavascriptExecutor js1 = (JavascriptExecutor) driver;
+        js1.executeScript("window.scrollBy(0,300)");
+        driver.findElement(memoriaAparelho).click();
         waitImplicity(); }
 
     public void clickAddCarrinhoBtn(){
@@ -247,8 +255,8 @@ public class SamsungHomePage {
         waitImplicity();
     }
 
-    public void sendTextSearchField() throws InterruptedException {
-        driver.findElement(serachTextField).sendKeys("Geladeira" + Keys.ENTER);
+    public void sendTextSearchField(String item) throws InterruptedException {
+        driver.findElement(serachTextField).sendKeys(item + Keys.ENTER);
 
     }
 
@@ -346,6 +354,11 @@ public class SamsungHomePage {
 
     }
 
+    public void waitExplicityShowFirstSmart() {
+        wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(ItemAparelho));
+    }
+
     public void waitExplicityShowMoreSpecificationBtn(){
         wait = new WebDriverWait(driver, 2);
         wait.until(ExpectedConditions.visibilityOfElementLocated(showMoreSpecificationBtn));
@@ -365,7 +378,7 @@ public class SamsungHomePage {
     }
 
     public void waitMyCarTextPage(){
-        wait = new WebDriverWait(driver, 5);
+        wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.visibilityOfElementLocated(myCarText));
 
     }

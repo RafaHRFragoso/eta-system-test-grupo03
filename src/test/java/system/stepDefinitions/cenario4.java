@@ -24,7 +24,7 @@ public class cenario4 {
     }
     @And("o usuário digita o nome {string} e tecla enter")
     public void oUsuárioDigitaONomeETeclaEnter(String string) throws InterruptedException {
-        samsungHomePage.sendTextSearchField();
+        samsungHomePage.sendTextSearchField(string);
     }
     @And("o usuário clica na geladeira desejada")
     public void oUsuárioClicaNaGeladeiraDesejada() {

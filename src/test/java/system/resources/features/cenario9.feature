@@ -9,7 +9,7 @@ Feature: Excluir geladeira no carrinho na home page
   Scenario: Excluir geladeira no carrinho na home page
     Given o user acessa o site
     When o user clica no botão de "Pesquisar"
-    And o user digita o nome "Geladeira" e tecla enter
+    And o usuário digita o nome "Geladeira" e tecla enter
     And o usuário clica no botao comprar geladeira desejada
     And o user escolhe a voltagem da geladeira clicando no botão "110 V"
     And o user adiciona a geladeira clicando no botão "ADICIONAR AO CARRINHO"

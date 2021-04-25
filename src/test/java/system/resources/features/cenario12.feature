@@ -13,6 +13,5 @@ Feature: Adicionar item no carrinho
     And o usuário clica no aparelho desejado
     And o usuário escolhe o modelo clicando no botão "A32"
     And o usuário escolhe a cor clicando no botão "PRETO"
-    And o usuário escolhe a memoria clicando no botão "128 GB"
     And o usuário adiciona o aparelho clicando no botão "ADICIONAR AO CARRINHO"
     Then o usuário vê o seu item dentro do carrinho

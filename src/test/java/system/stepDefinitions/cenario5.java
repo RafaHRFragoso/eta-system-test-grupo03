@@ -23,10 +23,7 @@ public class cenario5 {
     public void oUsuárioClicaOBotãoDe(String string) {
         samsungHomePage.clickSearchItemBtn();
     }
-    @And("o usuário digita o produto {string} e tecla enter")
-    public void oUsuárioDigitaProdutoETeclaEnter(String string) throws InterruptedException {
-        samsungHomePage.sendTextSearchField();
-    }
+
     @And("o usuário clica geladeira desejada")
     public void oUsuárioClicaGeladeiraDesejada() {
         samsungHomePage.waitExplicityShowFirstItem();

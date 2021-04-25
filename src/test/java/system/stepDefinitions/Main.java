@@ -92,7 +92,7 @@ public class Main {
         samsungHomePage.clickPopUp();
         samsungHomePage.closeCookies();
         samsungHomePage.clickSearchItemBtn();
-        samsungHomePage.sendTextSearchField();
+        samsungHomePage.sendTextSearchField("Geladeira");
         samsungHomePage.waitExplicityShowFirstItem();
         samsungHomePage.closeCookies();
         samsungHomePage.clickItemGeladeira();
@@ -114,7 +114,7 @@ public class Main {
         samsungHomePage.closeCookies();
         samsungHomePage.clickPopUp();
         samsungHomePage.clickSearchItemBtn();
-        samsungHomePage.sendTextSearchField();
+        samsungHomePage.sendTextSearchField("Geladeira");
         samsungHomePage.waitExplicityShowFirstItem();
         samsungHomePage.closeCookies();
         samsungHomePage.clickItemGeladeira();
@@ -179,7 +179,7 @@ public class Main {
         samsungHomePage.clickPopUp();
         samsungHomePage.closeCookies();
         samsungHomePage.clickSearchItemBtn();
-        samsungHomePage.sendTextSearchField();
+        samsungHomePage.sendTextSearchField("Geladeira");
         samsungHomePage.waitExplicityShowFirstItem();
         samsungHomePage.closeCookies();
         samsungHomePage.clickItemGeladeira();
@@ -235,14 +235,13 @@ public class Main {
         samsungHomePage.clickPopUp();
         samsungHomePage.closeCookies();
         samsungHomePage.clickSearchItemBtn();
-        samsungHomePage.sendTextSearchField2();
+        samsungHomePage.sendTextSearchField("Galaxy A72 Preto 128GB");
         samsungHomePage.closeCookies();
         samsungHomePage.clickItemAparelho();
-        samsungHomePage.waitExplicityCar();
         samsungHomePage.clickModeloA32GBtn();
         samsungHomePage.clickCorAparelhoBtn();
         samsungHomePage.clickMemoriaAparelhoBtn();
-        samsungHomePage.clickAddCarBtn();
+        samsungHomePage.clickAddCarrinhoBtn();
         samsungHomePage.waitMyCarTextPage();
         samsungHomePage.validatedMsgMyCarText();
         DriverManager.endSession();
