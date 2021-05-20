@@ -18,7 +18,8 @@ public class SamsungHomePage {
     private WebDriverWait wait;
     private JavascriptExecutor js;
 
-    private By popBtnNaoObrigado = By.xpath("//button[contains(text(),'NÃO, OBRIGADO.')]");
+    private By popBtnNaoObrigado = By.xpath("//*[text()='NÃO, OBRIGADO']");
+
     private By cookiesCloseBtnBanner = By.id("banner-cookie");
     private String telefoniaMenuBtn = ".samsungbr-samsung-store-0-x-gnb__depth1 > li:first-child > a > span[class='samsungbr-samsung-store-0-x-gnb__depth1-link-text']";
 
@@ -40,11 +41,11 @@ public class SamsungHomePage {
     private By searchBtn = By.cssSelector("li.undefined .samsungbr-samsung-store-0-x-gnb__search-btn > svg[id='search-bold']");
     private By serachTextField = By.id("downshift-0-input");
 
-    private By fisrtItemGeladeira = By.cssSelector("div[class='pr0 items-stretch vtex-flex-layout-0-x-stretchChildrenWidth   flex'] > div:nth-child(2) > div:first-child");
+    private By fisrtItemGeladeira = By.cssSelector("div[class='pr0 items-stretch vtex-flex-layout-0-x-stretchChildrenWidth   flex'] > div:nth-child(2) > div:nth-child(2)");
     private By comprarGeladeira = By.cssSelector("#render-store\\.home > div > div.vtex-store__template.bg-base > div > div:nth-child(3) > div > div:nth-child(3) > section > div.relative.justify-center.flex > div > div.vtex-flex-layout-0-x-flexRow.vtex-flex-layout-0-x-flexRow--resultRow > section > div > div:nth-child(2) > div > div:nth-child(3) > div > div > div > div.vtex-search-result-3-x-gallery.flex.flex-row.flex-wrap.items-stretch.bn.ph1.na4.pl9-l > div:nth-child(1) > section > a > article > button > div > div");
 
     //private By galaxyBudsProColor = By.cssSelector(".pr0.items-stretch.vtex-flex-layout-0-x-stretchChildrenWidth.flex > div > div:nth-child(3) > div > div > div > div > div:nth-child(2) > div:first-child");
-    private By voltage110Btn = By.cssSelector(".vtex-store-components-3-x-skuSelectorNameContainer.ma1 > div:nth-child(2) > div[class='vtex-store-components-3-x-skuSelectorItem vtex-store-components-3-x-skuSelectorItem--110-v relative di pointer flex items-center outline-0 ma2'] > div:first-child");
+    private By voltage110Btn = By.cssSelector(".vtex-store-components-3-x-skuSelectorNameContainer.ma1 > div:nth-child(2) > div[class='vtex-store-components-3-x-skuSelectorItem vtex-store-components-3-x-skuSelectorItem--110-v relative di pointer flex items-center outline-0 ma2']");
     private By addCarBtn = By.cssSelector(".bg-black-90.mb6.undefined > div > div:nth-child(3) > button");
 
     private By myCarText = By.cssSelector("body > div[class='container'] > div > div:first-child");
@@ -88,7 +89,7 @@ public class SamsungHomePage {
     private By voltarBtnCarrinho = By.cssSelector(".samsungbr-vtexcommercestable-com-br.body-cart > div.container > div:first-child > div:nth-child(2) > a > svg");
     private By avisoImportantePopUp = By.xpath("//span[text()='Aviso Importante']");
 
-    private By removeBtn = By.id("remove-button-1896");
+    private By removeBtn = By.cssSelector("button[id^='remove-button']");
     private By checkOut= By.id("proceed-to-checkout");
     private By menssageGeladeira = By.cssSelector(".vtex-flex-layout-0-x-flexRow.vtex-flex-layout-0-x-flexRow--listRow > section > div > div:nth-child(2) > div > div > div > div > div:first-child > div > div:nth-child(2)");
 
@@ -117,6 +118,8 @@ public class SamsungHomePage {
     }
 
     public void clickAddCarBtn(){
+        wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(addCarBtn));
         driver.findElement(addCarBtn).click(); }
 
     public void clickRemoveItemCarBtn() throws InterruptedException {
@@ -124,8 +127,6 @@ public class SamsungHomePage {
         driver.findElement(removeItemCar).click(); }
 
     // Funcao para atender ao cenario 12 * Grace Amaral *
-
-
     public void sendTextSearchField2 () throws InterruptedException {
         driver.findElement(serachTextField).sendKeys("Galaxy A72 Preto 128GB" + Keys.ENTER);
 
@@ -159,12 +160,15 @@ public class SamsungHomePage {
 
     //Função para clicar na opção NÃO, OBRIGADO do Pop-Up
     public void clickPopUp(){
+
+        wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(popBtnNaoObrigado));
         driver.findElement(popBtnNaoObrigado).click();
     }
 
     public void clickVoltage110Btn(){
         driver.findElement(voltage110Btn).click();
-        waitImplicity();
+
     }
 
     public void clickItauCardBtn(){
@@ -238,7 +242,10 @@ public class SamsungHomePage {
         action.moveToElement(telefoniaMenu).build().perform();
     }
 
-    public void mouseHoverCarIconHomePage(){
+    public void mouseHoverCarIconHomePage() throws InterruptedException {
+
+       Thread.sleep(3000);;
+
         Actions action = new Actions(driver);
         WebElement carIcon = driver.findElement(By.cssSelector(carIconHomePage));
         action.moveToElement(carIcon).build().perform();
@@ -460,7 +467,7 @@ public class SamsungHomePage {
     public void validadeMenssageGeladeira(){
         String mensagemGeladeiraCarrinho = driver.findElement(menssageGeladeira).getText();
         Assertions.assertEquals(
-                "Geladeira Frost Free Samsung French Door Twin Cooling Plus™ 470L Inox Look"
+                "Geladeira Samsung Inverter Frost Free Duplex Inverse BAROSA com Smart Sensor e Dispenser de Água na Porta 432L Inox Look"
                 , mensagemGeladeiraCarrinho);
         System.out.println("Passou!");
     }
@@ -493,18 +500,5 @@ public class SamsungHomePage {
             e1.printStackTrace();
         }
     }
-    //Tentando fazer um switchTo
-    /*public void switchToMetodo1(){
-        try {
-            driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-            driver.findElement(cookiesCloseBtnBanner).click();
-        } catch (Exception e1) {
-            e1.printStackTrace();
-        }
-    }
-    public void switchToMetodo(){
-        driver.switchTo().frame(driver.findElement(avisoImportantePopUp));
-        clickavisoImportantePopUp();
-        driver.switchTo().defaultContent();
-    }*/
+
 }

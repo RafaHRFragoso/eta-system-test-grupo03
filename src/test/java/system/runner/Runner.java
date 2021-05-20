@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/java/system/resources/features",
         glue = "system/stepDefinitions",
-        tags = "@cenario12",
+        tags = "@cenario5",
         monochrome = false,
         plugin = "pretty",
         snippets = CucumberOptions.SnippetType.CAMELCASE
