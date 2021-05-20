@@ -2,29 +2,24 @@ package system.stepDefinitions;
 
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import system.helpers.DriverManager;
 import system.pages.SamsungHomePage;
-import system.pages.URL;
 
 public class Main {
 
     private WebDriver driver;
     private WebDriverWait wait;
     private SamsungHomePage samsungHomePage;
-    //private DriverManager driverManager = new DriverManager();
-    //private DriverManager driverManager;
 
     @Test
     @Disabled
     void cenario1() {
-        //driverManager.getDriver();
+
         DriverManager.getDriver();
         samsungHomePage = new SamsungHomePage();
-        samsungHomePage.waitImplicity();
+        //samsungHomePage.waitImplicity();
         samsungHomePage.clickPopUp();
         samsungHomePage.closeCookies();
         samsungHomePage.mouseHover();
@@ -41,10 +36,10 @@ public class Main {
     @Test
     @Disabled
     void cenario2() {
-        // driverManager.getDriver();
+
         DriverManager.getDriver();
         samsungHomePage = new SamsungHomePage();
-        samsungHomePage.waitImplicity();
+        //samsungHomePage.waitImplicity();
         samsungHomePage.closeCookies();
         samsungHomePage.clickPopUp();
         samsungHomePage.mouseHover();
@@ -64,10 +59,10 @@ public class Main {
     }
     @Test
     public void cenario3(){
-        //driverManager.getDriver();
+
         DriverManager.getDriver();
         samsungHomePage = new SamsungHomePage();
-        samsungHomePage.waitImplicity();
+       // samsungHomePage.waitImplicity();
         samsungHomePage.clickPopUp();
         samsungHomePage.scrollScreenUntilFooter();
         samsungHomePage.closeCookies();
@@ -86,9 +81,10 @@ public class Main {
 
     @Test
     public void cenario4() throws InterruptedException {
+
         DriverManager.getDriver();
         samsungHomePage = new SamsungHomePage();
-        samsungHomePage.waitImplicity();
+        //samsungHomePage.waitImplicity();
         samsungHomePage.clickPopUp();
         samsungHomePage.closeCookies();
         samsungHomePage.clickSearchItemBtn();
@@ -108,9 +104,10 @@ public class Main {
     @Test
     @Disabled
     public void cenario5() throws InterruptedException {
+
         DriverManager.getDriver();
         samsungHomePage = new SamsungHomePage();
-        samsungHomePage.waitImplicity();
+        //samsungHomePage.waitImplicity();
         samsungHomePage.closeCookies();
         samsungHomePage.clickPopUp();
         samsungHomePage.clickSearchItemBtn();
@@ -129,10 +126,11 @@ public class Main {
 
     }
     @Test
-    public void cenario6(){
+    public void cenario6() throws InterruptedException {
+
         DriverManager.getDriver();
         samsungHomePage = new SamsungHomePage();
-        samsungHomePage.waitImplicity();
+        //samsungHomePage.waitImplicity();
         samsungHomePage.clickPopUp();
         samsungHomePage.closeCookies();
         samsungHomePage.mouseHoverCarIconHomePage();
@@ -142,9 +140,10 @@ public class Main {
     }
     @Test
     public void cenario7(){
+
         DriverManager.getDriver();
         samsungHomePage = new SamsungHomePage();
-        samsungHomePage.waitImplicity();
+        //samsungHomePage.waitImplicity();
         samsungHomePage.clickPopUp();
         samsungHomePage.closeCookies();
         samsungHomePage.clickItauCardBtn();
@@ -155,9 +154,10 @@ public class Main {
     }
     @Test
     public void cenario8(){
+
         DriverManager.getDriver();
         samsungHomePage = new SamsungHomePage();
-        samsungHomePage.waitImplicity();
+        //samsungHomePage.waitImplicity();
         samsungHomePage.clickPopUp();
         samsungHomePage.closeCookies();
         samsungHomePage.mouseHover();
@@ -173,9 +173,10 @@ public class Main {
 
     @Test
     public void cenario9() throws InterruptedException {
+
         DriverManager.getDriver();
         samsungHomePage = new SamsungHomePage();
-        samsungHomePage.waitImplicity();
+        //samsungHomePage.waitImplicity();
         samsungHomePage.clickPopUp();
         samsungHomePage.closeCookies();
         samsungHomePage.clickSearchItemBtn();
@@ -200,6 +201,7 @@ public class Main {
 
     @Test
     public void cenario10() throws InterruptedException {
+
         DriverManager.getDriver();
         samsungHomePage = new SamsungHomePage();
         samsungHomePage.waitImplicity();
@@ -214,6 +216,7 @@ public class Main {
 
     @Test
     public void cenario11(){
+
         DriverManager.getDriver();
         samsungHomePage = new SamsungHomePage();
         samsungHomePage.waitImplicity();
@@ -229,6 +232,7 @@ public class Main {
 
     @Test
     public void cenario12() throws InterruptedException {
+
         DriverManager.getDriver();
         samsungHomePage = new SamsungHomePage();
         samsungHomePage.waitImplicity();

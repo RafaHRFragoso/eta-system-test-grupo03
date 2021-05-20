@@ -12,19 +12,23 @@ public class cenario1 {
     SamsungHomePage samsungHomePage = new SamsungHomePage();
     DriverManager driverManager = new DriverManager();
 
-    @Given("o usuário acessou no site")
-    public void oUsuárioAcessouOSite() {
-        driverManager.getDriver();
+    @Given("o usuário acessou o site")
+    public void oUsuárioAcessaOSite() {
+        DriverManager.getDriver();
+        samsungHomePage.clickPopUp();
+        samsungHomePage.closeCookies();
     }
     @When("o usuário hover o nouse no menu {string}")
     public void oUsuárioHoverONouseNoMenu(String string) {
         samsungHomePage.clickPopUp();
+        samsungHomePage.closeCookies();
         samsungHomePage.mouseHover();
         samsungHomePage.waitExplicitySmartWatchesMenuBtn();
 
     }
     @And("o usuário clica em {string}")
     public void oUsuárioClicaEm(String string) {
+
         samsungHomePage.clickBotaoSmartWatches();
     }
     @And("o usuário scroll a página até o final")

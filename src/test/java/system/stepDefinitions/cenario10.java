@@ -8,9 +8,6 @@ import system.pages.SamsungHomePage;
 public class cenario10 {
     SamsungHomePage samsungHomePage = new SamsungHomePage();
 
-    @Given("o usuário acesso o site")
-    public void oUsuárioAcessoOSite() {
-    }
     @When("o usuário scroll a página")
     public void oUsuárioScrollAPáginal() {
     }

@@ -12,13 +12,6 @@ public class cenario5 {
     SamsungHomePage samsungHomePage = new SamsungHomePage();
     DriverManager driverManager = new DriverManager();
 
-    @Given("o usuário acessou o site")
-    public void oUsuárioAcessouOSite() {
-        DriverManager.getDriver();
-        samsungHomePage.waitImplicity();
-        samsungHomePage.closeCookies();
-        samsungHomePage.clickPopUp();
-    }
     @When("o usuário clica o botão de {string}")
     public void oUsuárioClicaOBotãoDe(String string) {
         samsungHomePage.clickSearchItemBtn();
@@ -30,12 +23,7 @@ public class cenario5 {
         samsungHomePage.closeCookies();
         samsungHomePage.clickItemGeladeira();
     }
-    @And("o usuario escolhe voltagem da geladeira clicando no botão {string}")
-    public void oUsuarioEscolheVoltagemDaGeladeiraClicandoNoBotão (String string){
-        samsungHomePage.waitExplicityCar();
-        samsungHomePage.clickVoltage110Btn();
 
-    }
     @And("o usuário adiciona a geladeira clicando no botão {string}")
     public void oUsuárioAdicionaAGeladeiraClicandoNoBotão(String string) {
         samsungHomePage.clickAddCarBtn();
@@ -51,5 +39,21 @@ public class cenario5 {
         samsungHomePage.validatedValueEmptyMyCar();
     }
 
+    @And("o user clica no botao {string}")
+    public void oUserClicaNoBotaoVoltar(String string) throws InterruptedException {
+        samsungHomePage.clickVoltarBtnCarrinho();
+    }
+    @And("o user houver o mouse no {string}")
+    public void oUserHouverOMouseNoIconeDoCarrinho(String string) throws InterruptedException {
+        samsungHomePage.mouseHoverCarIconHomePage();
+    }
+    @And("o user clica no botao {string} do carrinho")
+    public void oUserClicaNoBotaoExcluirDoCarrinho(String string) {
+        samsungHomePage.clickRemoveBtn();
+    }
+    @Then("o user valida a mensagem de carrinho vazio")
+    public void oUserValidaAMensagemDeCarrinhoVazio() {
+        samsungHomePage.validatedValueEmptyMyCarHomePage();
+    }
 
 }

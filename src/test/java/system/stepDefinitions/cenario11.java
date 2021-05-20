@@ -11,11 +11,6 @@ public class cenario11 {
     SamsungHomePage samsungHomePage = new SamsungHomePage();
     DriverManager driverManager = new DriverManager();
 
-    @Given("o user acessou no site\"")
-    public void o_user_acessou_no_site() {
-
-        driverManager.getDriver();
-    }
     @When("o usuário houver o mouse no menu {string}")
     public void oUsuárioHouverOMouseNoMenuInformatica(String string) {
         samsungHomePage.clickPopUp();

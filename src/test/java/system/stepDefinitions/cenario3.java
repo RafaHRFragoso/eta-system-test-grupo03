@@ -12,11 +12,6 @@ public class cenario3 {
     SamsungHomePage samsungHomePage = new SamsungHomePage();
     DriverManager driverManager = new DriverManager();
 
-    @Given("o user acessou o site")
-    public void oUserAcessouOSite() {
-        driverManager.getDriver();
-    }
-
     @When("o usuário scroll a página até o rodapé")
     public void oUsuárioScrollAPáginaAtéORodapé() {
         samsungHomePage.waitImplicity();

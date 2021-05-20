@@ -12,14 +12,10 @@ public class cenario4 {
     SamsungHomePage samsungHomePage = new SamsungHomePage();
     DriverManager driverManager = new DriverManager();
 
-    @Given("o usuário acessa o site")
-    public void oUsuárioAcessaOSite() {
-        DriverManager.getDriver();
-        samsungHomePage.waitImplicity();
-        samsungHomePage.clickPopUp();
-    }
+
     @When("o usuário clica no botão de {string}")
     public void oUsuárioClicaNoBotãoDe(String string) {
+
         samsungHomePage.clickSearchItemBtn();
     }
     @And("o usuário digita o nome {string} e tecla enter")
@@ -36,12 +32,44 @@ public class cenario4 {
     public void oUsuarioEscolheAVoltagemDaGeladeiraClicandoNoBotão(String string) {
         samsungHomePage.waitExplicityCar();
         samsungHomePage.clickVoltage110Btn();
-        samsungHomePage.clickAddCarBtn();
+       // samsungHomePage.clickAddCarBtn();
     }
 
-    @Then("o usuário ver o sei item dentro do carinho")
+    @Then("o usuário ver o seu item dentro do carinho")
     public void oUsuárioVerOSeiItemDentroDoCarinho() {
         samsungHomePage.waitMyCarTextPage();
         samsungHomePage.validatedMsgMyCarText();
+    }
+
+    @And("o usuário clica no aparelho desejado")
+    public void oUsuárioClicaNoAparelhoDesejado() {
+        samsungHomePage.waitExplicityShowFirstSmart();
+        samsungHomePage.closeCookies();
+        samsungHomePage.clickItemAparelho();
+    }
+
+    @When("o usuário escolhe o modelo clicando no botão {string}")
+    public void oUsuárioEscolheOModeloClicandoNoBotão(String string) {
+
+        samsungHomePage.clickModeloA32GBtn();
+    }
+
+    @When("o usuário escolhe a cor clicando no botão {string}")
+    public void oUsuárioEscolheACorClicandoNoBotão(String string) {
+        samsungHomePage.clickCorAparelhoBtn();
+
+    }
+    @When("o usuário escolhe a memoria clicando no botão {string}")
+    public void oUsuárioEscolheAMemoriaClicandoNoBotão(String string) {
+        samsungHomePage.waitExplicityCar();
+        samsungHomePage.clickMemoriaAparelhoBtn();
+
+    }
+
+    @When("o usuário adiciona o aparelho clicando no botão {string}")
+    public void oUsuárioAdicionaOAparelhoClicandoNoBotão(String string) {
+        samsungHomePage.waitExplicityCar();
+        samsungHomePage.clickAddCarrinhoBtn();
+
     }
 }

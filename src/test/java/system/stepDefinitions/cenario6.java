@@ -12,15 +12,8 @@ public class cenario6 {
     SamsungHomePage samsungHomePage = new SamsungHomePage();
     DriverManager driverManager = new DriverManager();
 
-    @Given("o usuario acessa o site")
-    public void oUsuarioAcessaOSite() {
-        driverManager.getDriver();
-        samsungHomePage.waitImplicity();
-        samsungHomePage.clickPopUp();
-        samsungHomePage.closeCookies();
-    }
     @When("o usuário hover o nouse no icone do carrinho")
-    public void oUsuárioHoverONouseNoIconeDoCarrinho() {
+    public void oUsuárioHoverONouseNoIconeDoCarrinho() throws InterruptedException {
         samsungHomePage.mouseHoverCarIconHomePage();
     }
     /*@And("o usuario ver a mensagem exibida")

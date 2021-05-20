@@ -12,10 +12,6 @@ public class cenario2 {
     SamsungHomePage samsungHomePage = new SamsungHomePage();
     DriverManager driverManager = new DriverManager();
 
-    @Given("o cliente acessou o site")
-    public void oUsuárioAcessouOSite() {
-        driverManager.getDriver();
-    }
     @When("o cliente hover o nouse no menu {string}")
     public void oClienteHoverONouseNoMenu(String string) {
         samsungHomePage.closeCookies();

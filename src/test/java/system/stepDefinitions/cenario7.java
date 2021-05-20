@@ -12,13 +12,6 @@ public class cenario7 {
     DriverManager driverManager = new DriverManager();
     SamsungHomePage samsungHomePage = new SamsungHomePage();
 
-    @Given("o usuário acessou a pagina")
-    public void oUsuárioAcessouAPagina() {
-        DriverManager.getDriver();
-        samsungHomePage.waitImplicity();
-        samsungHomePage.clickPopUp();
-    }
-
     @When("o cliente clica no botão {string}")
     public void oClienteClicaNoBotão(String string) {
         samsungHomePage.clickItauCardBtn();

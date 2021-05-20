@@ -9,7 +9,7 @@ import system.pages.SamsungHomePage;
 
 public class cenario12 {
 
-    SamsungHomePage samsungHomePage = new SamsungHomePage();
+    /*SamsungHomePage samsungHomePage = new SamsungHomePage();
     DriverManager driverManager = new DriverManager();
 
 
@@ -45,11 +45,11 @@ public class cenario12 {
 
     }
 
-    @Then("o usuário vê o seu item dentro do carrinho")
+    /*@Then("o usuário vê o seu item dentro do carrinho")
     public void oUsuárioVerOSeiItemDentroDoCarinho() {
         samsungHomePage.waitMyCarTextPage();
         samsungHomePage.validatedMsgMyCarText();
-    }
+    }*/
 }
 
 
