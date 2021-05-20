@@ -7,7 +7,7 @@ Feature: Adicionar item no carrinho
   Para que eu possa ver o meu produto no carrinho
 
   Scenario: Adicionar item no carrinho
-    Given o usuário acessa o site
+    Given o usuário acessou o site
     When o usuário clica no botão de "Pesquisar"
     And o usuário digita o nome "Galaxy A72 Preto 128GB" e tecla enter
     And o usuário clica no aparelho desejado

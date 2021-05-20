@@ -7,7 +7,7 @@ Feature: Excluir geladeira no carrinho na home page
   Para que eu possa remover o meu produto no carrinho da home page
 
   Scenario: Excluir geladeira no carrinho na home page
-    Given o user acessa o site
+    Given o usuário acessou o site
     When o user clica no botão de "Pesquisar"
     And o usuário digita o nome "Geladeira" e tecla enter
     And o usuário clica no botao comprar geladeira desejada

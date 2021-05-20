@@ -1,13 +1,13 @@
 #language: en
 
 @cenario2
-Feature: Mostrar as especificações do terceiro Smartwatches
+Feature: Smartwatches Especificações
   Como usuário potencial
   Eu quero imprimir as especificações do terceiro Smartwatches selecionados
   Para que eu possa ver as especificações do Smartwatches
 
   Scenario: Imprimir as especificações do terceiro Smartwatches selecionado
-    Given o cliente acessou o site
+    Given o usuário acessou o site
     When o cliente hover o nouse no menu "Telefonia"
     And o cliente clica em "Smartwatches"
     And o usuário seleciona o terceiro Smartwatches

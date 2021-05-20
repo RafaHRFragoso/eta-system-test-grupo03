@@ -7,7 +7,7 @@ Feature: Validar carrinho mensagem
   Para que eu possa ter certeza da mensagem mostrada
 
   Scenario: Validar mensagem carrinho página inicial
-    Given o usuario acessa o site
+    Given o usuário acessou o site
     When o usuário hover o nouse no icone do carrinho
     #And o usuario ver a mensagem exibida
     Then o usuário pode validar a mensagem mostrada

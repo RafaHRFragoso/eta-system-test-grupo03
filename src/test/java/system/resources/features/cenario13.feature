@@ -7,7 +7,7 @@ Feature: Suporte Fale Conosco
   Para buscar informações que solucionem minha dúvida ou probema
 
   Scenario: Buscar Telefone de Contato do Suporte
-    Given o user acessou o site
+    Given o usuário acessou o site
     When o usuário scroll a página até o rodapé
     And o usuário acessa a tela de Fale Conosco
     Then o usuário será redirecionado para a sessão de fale conosco
