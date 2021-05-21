@@ -14,19 +14,15 @@ public class cenario3 {
 
     @When("o usuário scroll a página até o rodapé")
     public void oUsuárioScrollAPáginaAtéORodapé() {
-        samsungHomePage.waitImplicity();
-        samsungHomePage.clickPopUp();
-        samsungHomePage.scrollScreenUntilFooter();
+         samsungHomePage.scrollScreenUntilFooter();
     }
     @And("o usuário clica em {string} na seção de suporte")
     public void oUsuárioClicaEmNaSeçãoDeSuporte(String string) {
         samsungHomePage.closeCookies();
-        samsungHomePage.waitImplicity();
         samsungHomePage.clickServiceCenterBtn();
     }
     @And("o usuário scroll a tela até a seção Encontre nossos serviços de suporte")
     public void oUsuárioScrollATelaAtéASeçãoEncontreNossosServiçosDeSuporte() {
-        samsungHomePage.waitImplicity();
         samsungHomePage.scrollUntilElement();
         samsungHomePage.clickMobileMenuBtn();
     }
@@ -36,17 +32,16 @@ public class cenario3 {
     }
     @And("o usuário encontra Procurar um local campo e enviar o CEP {string}")
     public void oUsuárioEncontraProcurarUmLocalCampoEEnviarOCEP(String string) {
-        samsungHomePage.waitImplicity();
         samsungHomePage.sendTextSearchItem();
     }
     @And("o usuário seleciona o botão {string}")
     public void oUsuárioSelecionaOBotão(String string) {
+
         samsungHomePage.clickKmBtn20Km();
     }
     @Then("o usuário imprime as informações do centro de serviço encontrado")
     public void oUsuárioImprimeAsInformaçõesDoCentroDeServiçoEncontrado() {
-        samsungHomePage.waitImplicity();
-        samsungHomePage.listElements2();
+        samsungHomePage.listGroupService();
     }
 
 }

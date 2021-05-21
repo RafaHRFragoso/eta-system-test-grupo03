@@ -8,8 +8,8 @@ Feature: Smartwatches Especificações
 
   Scenario: Imprimir as especificações do terceiro Smartwatches selecionado
     Given o usuário acessou o site
-    When o cliente hover o nouse no menu "Telefonia"
-    And o cliente clica em "Smartwatches"
+    When o usuário hover o nouse no menu "Telefonia"
+    And o usuário clica em "Smartwatches"
     And o usuário seleciona o terceiro Smartwatches
     And o usuário scroll a tela até o menu Mostrar mais especificações
     And o usuário clica em "Mostrar mais especficiações" para expandir

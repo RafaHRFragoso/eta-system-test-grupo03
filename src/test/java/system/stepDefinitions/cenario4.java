@@ -4,6 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.jupiter.api.Assertions;
 import system.helpers.DriverManager;
 import system.pages.SamsungHomePage;
 
@@ -32,13 +33,14 @@ public class cenario4 {
     public void oUsuarioEscolheAVoltagemDaGeladeiraClicandoNoBotão(String string) {
         samsungHomePage.waitExplicityCar();
         samsungHomePage.clickVoltage110Btn();
-       // samsungHomePage.clickAddCarBtn();
+
     }
 
     @Then("o usuário ver o seu item dentro do carinho")
     public void oUsuárioVerOSeiItemDentroDoCarinho() {
         samsungHomePage.waitMyCarTextPage();
-        samsungHomePage.validatedMsgMyCarText();
+        String myCarMsg = samsungHomePage.getMsgMyCarText();
+        Assertions.assertEquals("Meu carrinho", myCarMsg);
     }
 
     @And("o usuário clica no aparelho desejado")
@@ -50,7 +52,6 @@ public class cenario4 {
 
     @When("o usuário escolhe o modelo clicando no botão {string}")
     public void oUsuárioEscolheOModeloClicandoNoBotão(String string) {
-
         samsungHomePage.clickModeloA32GBtn();
     }
 
@@ -69,7 +70,7 @@ public class cenario4 {
     @When("o usuário adiciona o aparelho clicando no botão {string}")
     public void oUsuárioAdicionaOAparelhoClicandoNoBotão(String string) {
         samsungHomePage.waitExplicityCar();
-        samsungHomePage.clickAddCarrinhoBtn();
+        samsungHomePage.clickAddCarBtn();
 
     }
 }

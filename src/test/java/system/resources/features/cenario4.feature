@@ -7,7 +7,7 @@ Feature: Adicionar item no carrinho
   Para que eu possa ver o meu produto no carrinho
 
   Scenario: Adicionar Geladeira no carrinho
-    Given o usuário acessa o site
+    Given o usuário acessou o site
     When o usuário clica no botão de "Pesquisar"
     And o usuário digita o nome "Geladeira" e tecla enter
     And o usuário clica na geladeira desejada

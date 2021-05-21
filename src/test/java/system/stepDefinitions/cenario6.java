@@ -16,10 +16,7 @@ public class cenario6 {
     public void oUsuárioHoverONouseNoIconeDoCarrinho() throws InterruptedException {
         samsungHomePage.mouseHoverCarIconHomePage();
     }
-    /*@And("o usuario ver a mensagem exibida")
-    public void oUsuarioVerAMensagemExibida() {
-        samsungHomePage.waitEmptyCarMessageHomePage();
-    }*/
+
     @Then("o usuário pode validar a mensagem mostrada")
     public void oUsuárioPodeValidarAMensagemMostrada() {
         samsungHomePage.waitEmptyCarMessageHomePage();

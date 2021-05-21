@@ -4,6 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.jupiter.api.Assertions;
 import system.helpers.DriverManager;
 import system.pages.SamsungHomePage;
 
@@ -14,6 +15,7 @@ public class cenario5 {
 
     @When("o usuário clica o botão de {string}")
     public void oUsuárioClicaOBotãoDe(String string) {
+
         samsungHomePage.clickSearchItemBtn();
     }
 
@@ -26,6 +28,7 @@ public class cenario5 {
 
     @And("o usuário adiciona a geladeira clicando no botão {string}")
     public void oUsuárioAdicionaAGeladeiraClicandoNoBotão(String string) {
+
         samsungHomePage.clickAddCarBtn();
     }
     @And("o usuário remove o item do carrinho clicando no botão {string}")
@@ -36,7 +39,9 @@ public class cenario5 {
     @Then("o usuário ver a mensagem de carrinho vazio")
     public void oUsuárioPodeVerAMessagemDeCarrinhoVazio() {
         samsungHomePage.waitEmptyCarMessage();
-        samsungHomePage.validatedValueEmptyMyCar();
+        String emptyCarMsg = samsungHomePage.validatedValueEmptyMyCar();
+        Assertions.assertEquals("Seu carrinho está vazio.", emptyCarMsg);
+
     }
 
     @And("o user clica no botao {string}")
@@ -49,11 +54,13 @@ public class cenario5 {
     }
     @And("o user clica no botao {string} do carrinho")
     public void oUserClicaNoBotaoExcluirDoCarrinho(String string) {
-        samsungHomePage.clickRemoveBtn();
+         samsungHomePage.clickRemoveBtn();
     }
     @Then("o user valida a mensagem de carrinho vazio")
     public void oUserValidaAMensagemDeCarrinhoVazio() {
-        samsungHomePage.validatedValueEmptyMyCarHomePage();
+        String emptyCarMsgHomepage = samsungHomePage.validatedValueEmptyMyCarHomePage();
+        Assertions.assertEquals("Teu carrinho está vazio", emptyCarMsgHomepage);
+
     }
 
 }

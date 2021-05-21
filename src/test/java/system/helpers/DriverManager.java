@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.concurrent.TimeUnit;
+
 import static system.helpers.Constants.CHROME_DRIVER_PATH;
 
 public class DriverManager {
@@ -18,6 +20,7 @@ public class DriverManager {
             driver = new ChromeDriver();
             driver.get("https://shop.samsung.com/br/");
             driver.manage().window().maximize();
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         }
 
         return driver;

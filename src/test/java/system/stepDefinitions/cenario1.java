@@ -20,26 +20,21 @@ public class cenario1 {
     }
     @When("o usuário hover o nouse no menu {string}")
     public void oUsuárioHoverONouseNoMenu(String string) {
-        samsungHomePage.clickPopUp();
-        samsungHomePage.closeCookies();
         samsungHomePage.mouseHover();
         samsungHomePage.waitExplicitySmartWatchesMenuBtn();
 
     }
     @And("o usuário clica em {string}")
     public void oUsuárioClicaEm(String string) {
-
         samsungHomePage.clickBotaoSmartWatches();
     }
     @And("o usuário scroll a página até o final")
     public void oUsuárioScrollAPáginaAtéOFinal() {
-        samsungHomePage.waitImplicity();
         samsungHomePage.scrollScreenUntilFooter();
     }
     @Then("o usuário lista os nomes dos Smartwatches e imprime o nomes deles em cada linha")
     public void oUsuárioListaOsNomesDosSmartwatchesEImprimeONomesDelesEmCadaLinha() {
-        samsungHomePage.waitImplicity();
-        samsungHomePage.listElements();
+        samsungHomePage.listSmartWatchNames();
     }
 
 
