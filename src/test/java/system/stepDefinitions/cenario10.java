@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Assertions;
 import system.pages.SamsungHomePage;
 
 public class cenario10 {
+
     SamsungHomePage samsungHomePage = new SamsungHomePage();
 
     @And("o usuario clica no botão {string}")

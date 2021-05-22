@@ -6,27 +6,27 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
 import system.helpers.DriverManager;
+import system.pages.CarrinhoPage;
+import system.pages.ItauCardPage;
 import system.pages.SamsungHomePage;
 
 public class cenario7 {
 
-    DriverManager driverManager = new DriverManager();
-    SamsungHomePage samsungHomePage = new SamsungHomePage();
+    ItauCardPage itauCardPage = new ItauCardPage();
 
     @When("o cliente clica no botão {string}")
     public void oClienteClicaNoBotão(String string) {
-
-        samsungHomePage.clickItauCardBtn();
+        itauCardPage.clickItauCardBtn();
     }
 
     @And("o clica em {string}")
     public void oClicaEm(String string) {
-        samsungHomePage.waitPecaOSeuBtn();
+        itauCardPage.waitPecaOSeuBtn();
     }
 
     @Then("o cliente valida a mensagem mostrada")
     public void oClienteValidaAMensagemMostrada() {
-        String msgCartaoSamsungItauCard = samsungHomePage.validatedCartaoSamsungItaucardText();
+        String msgCartaoSamsungItauCard = itauCardPage.validatedCartaoSamsungItaucardText();
         Assertions.assertEquals("Cartão Samsung Itaucard", msgCartaoSamsungItauCard);
     }
 

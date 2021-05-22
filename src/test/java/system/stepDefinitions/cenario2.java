@@ -10,7 +10,6 @@ import system.pages.SamsungHomePage;
 public class cenario2 {
 
     SamsungHomePage samsungHomePage = new SamsungHomePage();
-    DriverManager driverManager = new DriverManager();
 
     @And("o usuário seleciona o terceiro Smartwatches")
     public void oUsuárioSelecionaOTerceiroSmartwatches() {

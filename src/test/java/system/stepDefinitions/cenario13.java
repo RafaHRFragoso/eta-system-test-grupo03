@@ -8,9 +8,8 @@ import system.helpers.DriverManager;
 import system.pages.SamsungHomePage;
 
 public class cenario13 {
-    SamsungHomePage samsungHomePage = new SamsungHomePage();
-    DriverManager driverManager = new DriverManager();
 
+    SamsungHomePage samsungHomePage = new SamsungHomePage();
 
     @When("o usuário acessa a tela de Fale Conosco")
     public void oUsuárioAcessaATelaDeFaleConosco() {

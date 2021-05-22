@@ -8,8 +8,8 @@ import io.cucumber.java.en.When;
 
 
 public class cenario11 {
+
     SamsungHomePage samsungHomePage = new SamsungHomePage();
-    DriverManager driverManager = new DriverManager();
 
     @When("o usuário houver o mouse no menu {string}")
     public void oUsuárioHouverOMouseNoMenuInformatica(String string) {
@@ -24,7 +24,6 @@ public class cenario11 {
     }
     @Then("exibe o numero de notebooks encontrados")
     public void exibeONumeroDeNotebooksEncontrados() {
-
         samsungHomePage.imprimeNumeroDeNotebookGamer();
     }
 

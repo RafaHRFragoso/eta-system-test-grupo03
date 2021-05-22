@@ -10,7 +10,6 @@ import system.pages.SamsungHomePage;
 public class cenario1 {
 
     SamsungHomePage samsungHomePage = new SamsungHomePage();
-    DriverManager driverManager = new DriverManager();
 
     @Given("o usuário acessou o site")
     public void oUsuárioAcessaOSite() {

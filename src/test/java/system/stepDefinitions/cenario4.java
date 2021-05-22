@@ -6,17 +6,16 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
 import system.helpers.DriverManager;
+import system.pages.CarrinhoPage;
 import system.pages.SamsungHomePage;
 
 public class cenario4 {
 
     SamsungHomePage samsungHomePage = new SamsungHomePage();
-    DriverManager driverManager = new DriverManager();
-
+    CarrinhoPage carrinhoPage = new CarrinhoPage();
 
     @When("o usuário clica no botão de {string}")
     public void oUsuárioClicaNoBotãoDe(String string) {
-
         samsungHomePage.clickSearchItemBtn();
     }
     @And("o usuário digita o nome {string} e tecla enter")
@@ -31,15 +30,15 @@ public class cenario4 {
     }
     @And("o usuario escolhe a voltagem da geladeira clicando no botão {string}")
     public void oUsuarioEscolheAVoltagemDaGeladeiraClicandoNoBotão(String string) {
-        samsungHomePage.waitExplicityCar();
+        carrinhoPage.waitExplicityCar();
         samsungHomePage.clickVoltage110Btn();
 
     }
 
     @Then("o usuário ver o seu item dentro do carinho")
     public void oUsuárioVerOSeiItemDentroDoCarinho() {
-        samsungHomePage.waitMyCarTextPage();
-        String myCarMsg = samsungHomePage.getMsgMyCarText();
+        carrinhoPage.waitMyCarTextPage();
+        String myCarMsg = carrinhoPage.getMsgMyCarText();
         Assertions.assertEquals("Meu carrinho", myCarMsg);
     }
 
@@ -62,15 +61,15 @@ public class cenario4 {
     }
     @When("o usuário escolhe a memoria clicando no botão {string}")
     public void oUsuárioEscolheAMemoriaClicandoNoBotão(String string) {
-        samsungHomePage.waitExplicityCar();
+        carrinhoPage.waitExplicityCar();
         samsungHomePage.clickMemoriaAparelhoBtn();
 
     }
 
     @When("o usuário adiciona o aparelho clicando no botão {string}")
     public void oUsuárioAdicionaOAparelhoClicandoNoBotão(String string) {
-        samsungHomePage.waitExplicityCar();
-        samsungHomePage.clickAddCarBtn();
+        carrinhoPage.waitExplicityCar();
+        carrinhoPage.clickAddCarBtn();
 
     }
 }
